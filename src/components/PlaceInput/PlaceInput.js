@@ -6,6 +6,10 @@ class PlaceInput extends Component {
     placeName: ""
   };
 
+  componentDidMount() {
+    
+  }
+
   placeNameChangedHandler = val => {
     this.setState({
       placeName: val
@@ -16,6 +20,7 @@ class PlaceInput extends Component {
     if (this.state.placeName.trim() === "") {
       return;
     }
+
     this.props.onPlaceAdded(this.state.placeName);
   };
 
