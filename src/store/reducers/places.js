@@ -1,21 +1,26 @@
-import { ADD_PLACE, DELETE_PLACE } from '../../action/actionTypes';
+import {ADD_PLACE, DELETE_PLACE, SET_PLACE} from '../../action/actionTypes';
 
 const initialState = {
   places: []
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_PLACE:
+    // case ADD_PLACE:
+    //   return {
+    //     ...state,
+    //     places: state.places.concat({
+    //       key: Math.random(),
+    //       name: action.placeName,
+    //       image: {
+    //         uri:
+    //           "https://c1.staticflickr.com/5/4096/4744241983_34023bf303_b.jpg"
+    //       }
+    //     })
+    //   };
+    case SET_PLACE:
       return {
         ...state,
-        places: state.places.concat({
-          key: Math.random(),
-          name: action.placeName,
-          image: {
-            uri:
-              "https://c1.staticflickr.com/5/4096/4744241983_34023bf303_b.jpg"
-          }
-        })
+        places: action.places
       };
     case DELETE_PLACE:
       return {
