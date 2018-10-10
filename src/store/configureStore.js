@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 import placesReducer from './reducers/places';
 
 const rootReducer = combineReducers(
@@ -7,8 +7,10 @@ const rootReducer = combineReducers(
   }
 );
 
+let composeEnhancers = compose;
+
 const configureStore = () => {
-  return createStore(rootReducer)
+  return createStore(rootReducer, composeEnhancers())
 };
 
 export default configureStore;
