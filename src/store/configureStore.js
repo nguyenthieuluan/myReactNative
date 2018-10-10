@@ -8,10 +8,10 @@ const rootReducer = combineReducers(
   }
 );
 
-let composeEnhancers = compose;
+//let composeEnhancers = compose;
 
 const configureStore = () => {
-  return createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+  return createStore(rootReducer, applyMiddleware(thunk))
 };
 
 export default configureStore;
