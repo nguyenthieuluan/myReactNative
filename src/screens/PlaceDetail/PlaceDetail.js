@@ -7,6 +7,7 @@ import { deletePlace } from '../../action/index';
 class placeDetail extends Component {
   onItemDeleted = () => {
       this.props.onDeletePlace(this.props.selectedPlace.key);
+    //alert(this.props.selectedPlace.key);
       this.props.navigator.pop();
   };
   onModalClosed = () => {
@@ -19,6 +20,7 @@ class placeDetail extends Component {
         <View>
           <Image source={this.props.selectedPlace.image} style={styles.placeImage} />
           <Text style={styles.placeName}>{this.props.selectedPlace.name}</Text>
+          <Text style={styles.placeName}>{this.props.selectedPlace.initialAccountBalance}</Text>
         </View>
         <View>
           <TouchableOpacity  onPress={this.onItemDeleted}>

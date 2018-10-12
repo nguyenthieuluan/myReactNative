@@ -1,7 +1,7 @@
 import {ADD_PLACE, DELETE_PLACE, SET_PLACE} from "./actionTypes";
 import {firebaseApp} from "../config/FirebaseConfig";
 
-export const addPlace = (placeName) => {
+export const addPlace = (placeName, initialAccountBalance) => {
   // return dispatch => {
   //   const placeData = {
   //     name: placeName,
@@ -16,10 +16,11 @@ export const addPlace = (placeName) => {
   //   })
   // }
   return dispatch => {
-    const placeData = {
-      name: placeName
+    const walletData = {
+      name: placeName,
+      initialAccountBalance: initialAccountBalance
     };
-    firebaseApp.database().ref('places').push(placeData);
+    firebaseApp.database().ref('places').push(walletData);
   }
 };
 // load data
@@ -45,14 +46,10 @@ export const getPlaces = () => {
       childSnappshot.forEach((doc) =>{
         places.push({
           key: doc.key,
-          name: doc.toJSON().name
+          name: doc.toJSON().name,
+          initialAccountBalance: doc.toJSON().initialAccountBalance
         })
       });
-      // places.push({
-      //   name: dataSnapshot.val().name,
-      //   key: dataSnapshot.key
-      // });
-      //alert(places[0].name);
       dispatch(setPlaces(places));
     }, function (error) { })
   }
@@ -66,9 +63,8 @@ export const setPlaces = places => {
 };
 
 export const deletePlace = (key) => {
-  return {
-    type: DELETE_PLACE,
-    placeKey: key
+  return dispatch => {
+    firebaseApp.database().ref('places').child(key).remove();
   }
 };
 // export const selectPlace = (key) => {

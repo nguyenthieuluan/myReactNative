@@ -3,7 +3,8 @@ import { View, TextInput, Button, StyleSheet } from "react-native";
 
 class PlaceInput extends Component {
   state = {
-    placeName: ""
+    placeName: "",
+    initialAccountBalance: ""
   };
 
   componentDidMount() {
@@ -15,22 +16,33 @@ class PlaceInput extends Component {
       placeName: val
     });
   };
-
+  initialAccountBalanceChangedHandler = val => {
+    this.setState({
+      initialAccountBalance: val
+    });
+  };
   placeSubmitHandler = () => {
-    if (this.state.placeName.trim() === "") {
+    if (this.state.placeName.trim() === "" || this.state.initialAccountBalance.trim() === "") {
+      alert('Please enter your account info.');
       return;
     }
-
-    this.props.onPlaceAdded(this.state.placeName);
+    this.props.onPlaceAdded(this.state.placeName, this.state.initialAccountBalance);
   };
 
   render() {
     return (
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="An awesome place"
+          placeholder="Name"
           value={this.state.placeName}
           onChangeText={this.placeNameChangedHandler}
+          style={styles.placeInput}
+        />
+        <TextInput
+          keyboardType = "phone-pad"
+          placeholder="Initial account balance"
+          value={this.state.initialAccountBalance}
+          onChangeText={this.initialAccountBalanceChangedHandler}
           style={styles.placeInput}
         />
         <Button
@@ -47,15 +59,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     // flex: 1,
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center"
   },
   placeInput: {
-    width: "70%"
+    width: "100%"
   },
   placeButton: {
-    width: "30%"
+    width: "100%"
   }
 });
 

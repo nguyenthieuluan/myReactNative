@@ -1,28 +1,47 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const listItem = props => (
   <TouchableOpacity onPress={props.onItemPressed}>
-    <View style={styles.listItem}>
-      <Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />
-      <Text>{props.placeName}</Text>
+    <View style={styles.listItemContainer}>
+      <Icon name="md-bookmarks" style={styles.walletIcon} size={40} color="#01a699" />
+      {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
+      <View style={styles.listItem}>
+        <Text style={styles.balanceWallet}>{props.key}</Text>
+        <Text style={styles.nameWallet}>{props.placeName}</Text>
+        <Text style={styles.balanceWallet}>{props.initialAccountBalance}</Text>
+      </View>
     </View>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
-  listItem: {
+  listItemContainer: {
+    flexDirection: "row",
     width: "100%",
     marginBottom: 5,
     padding: 10,
     backgroundColor: "#eee",
-    flexDirection: "row",
     alignItems: "center"
+  },
+  listItem: {
+    flex: 1,
+    flexDirection: "column",
   },
   placeImage: {
       marginRight: 8,
       height: 30,
       width: 30
+  },
+  nameWallet: {
+    width: "100%"
+  },
+  balanceWallet: {
+    width: "100%"
+  },
+  walletIcon: {
+    marginRight: 10
   }
 });
 
