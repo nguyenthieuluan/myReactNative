@@ -45,6 +45,12 @@ class PlaceInput extends Component {
           onChangeText={this.initialAccountBalanceChangedHandler}
           style={styles.placeInput}
         />
+        <TextInput
+          placeholder="Note"
+          value={this.state.initialAccountBalance}
+          onChangeText={this.initialAccountBalanceChangedHandler}
+          style={styles.placeInput}
+        />
         <Button
           title="Add"
           style={styles.placeButton}

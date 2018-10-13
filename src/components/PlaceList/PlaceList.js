@@ -10,7 +10,6 @@ const placeList = props => {
       data={props.places}
       renderItem={(info) => (
         <ListItem
-          key={info.item.key}
           placeName={info.item.name}
           initialAccountBalance={info.item.initialAccountBalance}
           placeImage={info.item.image}

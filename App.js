@@ -6,12 +6,12 @@ import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
 import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 import configureStore from './src/store/configureStore';
 import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetail';
-import SideDrawer from "./src/SideDrawer/SideDrawer";
 import Wallet from "./src/screens/Wallet/Wallet";
 import Summary from "./src/screens/Summary/Summary";
 import Spent from "./src/screens/Spent/Spent";
 import Income from "./src/screens/Income/Income";
 import AddWallet from "./src/screens/Wallet/layout/AddWallet";
+import SideDrawer from "./src/screens/SideDrawer/SideDrawer";
 
 const store = configureStore();
 

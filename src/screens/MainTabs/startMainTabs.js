@@ -21,7 +21,7 @@ const startTabs = () => {
           navigatorButtons: {
             leftButtons: [
               {
-                icon: sourcers[6],
+                icon: sourcers[4],
                 title: "menu",
                 id: "sideDrawerToggle"
               }
@@ -38,7 +38,7 @@ const startTabs = () => {
           navigatorButtons: {
             leftButtons: [
               {
-                icon: sourcers[6],
+                icon: sourcers[4],
                 title: "menu",
                 id: "sideDrawerToggle"
               }
@@ -55,7 +55,7 @@ const startTabs = () => {
           navigatorButtons: {
             leftButtons: [
               {
-                icon: sourcers[6],
+                icon: sourcers[4],
                 title: "menu",
                 id: "sideDrawerToggle"
               }
@@ -72,7 +72,7 @@ const startTabs = () => {
           navigatorButtons: {
             leftButtons: [
               {
-                icon: sourcers[6],
+                icon: sourcers[4],
                 title: "menu",
                 id: "sideDrawerToggle"
               }

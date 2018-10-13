@@ -46,7 +46,7 @@ class Wallet extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <PlaceList places={this.props.places}
                    onItemSelected={this.itemSelectedHandler}
         />
@@ -71,6 +71,11 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#C4C5C0",
+    width: "100%",
+    height: "100%"
+  },
   addButtonIcon: {
    color: "white"
   },

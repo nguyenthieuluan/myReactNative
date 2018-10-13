@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 import { connect } from 'react-redux';
 
 
@@ -22,12 +22,12 @@ class AddWallet extends Component{
   };
 
   placeAddedHandler = (placeName, initialAccountBalance) => {
-    this.props.navigator.pop()
+    this.props.navigator.pop();
     this.props.onAddPlace(placeName, initialAccountBalance)
   };
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
       </View>
     )
@@ -41,3 +41,11 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(null, mapDispatchToProps)(AddWallet);
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#C4C5C0",
+    width: "100%",
+    height: "100%"
+  }
+});

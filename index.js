@@ -4,9 +4,9 @@ import React from 'react'
 import App from './App';
 
 import configureStore from './src/store/configureStore';
-
+console.disableYellowBox = true;
 const store = configureStore();
-
+console.disableYellowBox = true;
 const RNRedux = () => (
   <Provider store={store}>
     <App/>
