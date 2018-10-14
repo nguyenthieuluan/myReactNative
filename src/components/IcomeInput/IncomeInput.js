@@ -1,27 +1,27 @@
 import React, { Component } from "react";
 import {View, TextInput, Button, StyleSheet, Picker, Text, Alert} from "react-native";
-import {addExpense, getPlaces} from "../../action";
+import {addExpense, addIncome, getPlaces} from "../../action";
 import { connect } from 'react-redux';
 
-class ExpenseInput extends Component {
-constructor(props) {
-  super(props);
-  //this.props.onLoadPlaces();
-  this.categorys = ['Eat and Rink', 'Bill and Utilities', 'Move', 'Shopping', 'Friend and Lover', 'Entertainment', 'Travel', 'Health', 'Education', 'Other expenses'];
-  this.state = {
-    selectedValueKey : "",
-    selectedCategory: "",
-    expense: "",
-    note: ""
+class IncomeInput extends Component {
+  constructor(props) {
+    super(props);
+    //this.props.onLoadPlaces();
+    this.categorys = ['Bonus', 'Interest', 'Salary', 'Borrow money', 'Awarded', 'Sell things', 'Other revenues'];
+    this.state = {
+      selectedValueKey : "",
+      selectedCategory: "",
+      expense: "",
+      note: ""
+    }
   }
-}
   expenseAddHandler = () => {
     //if (this.state.account.trim() === "" || this.state.category.trim() === "" || this.state.expense.trim() === "" || this.state.note.trim() === "") {
     if (this.state.expense.trim() === "" || this.state.selectedValueKey === "") {
       alert('Please enter your account info.');
       return;
     }
-    this.props.onAddExpense(this.state.selectedValueKey,this.state.selectedCategory ,this.state.expense, this.state.note);
+    this.props.onAddIncome(this.state.selectedValueKey,this.state.selectedCategory ,this.state.expense, this.state.note);
     Alert.alert('Successful!')
     //alert(this.state.selectedCategory)
   };
@@ -133,9 +133,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddExpense: (key, category, expenseAmount, note) => dispatch(addExpense(key, category, expenseAmount, note)),
+    onAddIncome: (key, category, incomeAmount, note) => dispatch(addIncome(key, category, incomeAmount, note)),
     //onLoadPlaces: () => dispatch(getPlaces())
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(ExpenseInput);
+export default connect(mapStateToProps, mapDispatchToProps)(IncomeInput);

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {Button, TextInput, Text, View, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
+import {Button, TextInput, Text, View, StyleSheet, ImageBackground, TouchableOpacity, Alert} from "react-native";
 import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefauItInput';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
 import backgroundImage from '../../assets/background.jpg';
 import {firebaseApp} from "../../config/FirebaseConfig";
-import * as Alert from "react-native";
 
 class AuthScreen extends Component {
   constructor(props) {
@@ -18,58 +17,59 @@ class AuthScreen extends Component {
       viewMode: 'login'
     }
   }
-
-
-  updateInputState = (key, value) => {
-    this.setState(prevState => {
-      return
-    })
-  };
-
   loginHandler = () => {
 
     if (this.state.viewMode === 'register') {
-      this.setState({viewMode: 'login'})
+      this.setState({
+        viewMode: 'login',
+        password: ""
+      });
+      return false;
     }
+    startMainTabs();
     if (this.state.email === "" || this.state.password === "")
       return false;
 
     // firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
     //   .then(()=>{
-    //     //startMainTabs();
-    //     alert('ngon');
+    //     startMainTabs();
+    //     //alert('ngon');
     //   })
     //   .catch(function (error) {
-    //     Alert.alert('k ngon');
-    //   })
-    //alert(this.state.email+this.state.password);
+    //     Alert.alert(error.toString());
+    //   });
   };
   registerHandler = () => {
     if (this.state.viewMode === 'login') {
-      this.setState({viewMode: 'register'})
+      this.setState({
+        viewMode: 'register',
+        password: ""
+      });
+      return false;
     }
     if (this.state.password !== this.state.confirmPassword) {
       alert('Password not match!');
       return false;
     }
-    // firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    //   .then(()=>{
-    //     alert('Successfully registered');
-    //     this.setState({
-    //       email: '',
-    //       password: '',
-    //       viewMode: 'login'
-    //     })
-    //   })
-    //   .catch(function (error) {
-    //     alert(error)
-    //   })
+    firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(()=>{
+        alert('Successfully registered');
+        this.setState({
+          email: '',
+          password: '',
+          viewMode: 'login'
+        })
+      })
+      .catch(function (error) {
+        alert(error.toString())
+      })
   };
   render() {
     let confirmPassword = null;
     if(this.state.viewMode === 'register') {
       confirmPassword = (<DefaultInput placeholder="ConfirmPassword" style={styles.input}
                                        value = {this.state.password.value}
+                                       secureTextEntry={true}
                                        onChangeText = {(val) => this.setState({'confirmPassword': val})}
       />);
     }
@@ -90,6 +90,7 @@ class AuthScreen extends Component {
             />
             <DefaultInput placeholder="Password" style={styles.input}
                           value = {this.state.password.value}
+                          secureTextEntry={true}
                           onChangeText = {(val) => this.setState({'password': val})}
             />
             {confirmPassword}

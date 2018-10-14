@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const expenseIncomeItem = props => (
-  <TouchableOpacity>
+  <TouchableOpacity onPress={props.onItemPressed}>
     <View style={styles.listItemContainer}>
       <Icon style={styles.walletIcon} name="ios-bus" size={40} color="#01a699" />
       {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
@@ -12,7 +12,10 @@ const expenseIncomeItem = props => (
         <Text style={styles.balanceWallet}>{props.note}</Text>
       </View>
       <View>
-        <Text>{props.expenseIncomeAmount} VND</Text>
+        <Text style={styles.textDate}>{props.date}</Text>
+      </View>
+      <View>
+        <Text>{props.expenseAmount} VND</Text>
       </View>
     </View>
   </TouchableOpacity>
@@ -44,6 +47,9 @@ const styles = StyleSheet.create({
   },
   walletIcon: {
     marginRight: 10
+  },
+  textDate: {
+    marginRight: 30
   }
 });
 

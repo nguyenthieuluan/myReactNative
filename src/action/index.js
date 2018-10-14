@@ -1,1 +1,1 @@
-export { addPlace, deletePlace, setPlaces, getPlaces, updateAccount, addExpense } from './places'
+export { addPlace, deletePlace, setPlaces, getPlaces, updateAccount, addExpense, addIncome } from './places'

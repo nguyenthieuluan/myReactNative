@@ -24,7 +24,8 @@ export const getPlaces = () => {
           key: doc.key,
           name: doc.toJSON().name,
           initialAccountBalance: doc.toJSON().initialAccountBalance,
-          note: doc.toJSON().note
+          note: doc.toJSON().note,
+          expense: doc.toJSON().expense
         })
       });
       dispatch(setPlaces(places));
@@ -64,6 +65,28 @@ export const addExpense = (key, category, expenseAmount, note) => {
     firebaseApp.database().ref('places').child(key).update({initialAccountBalance: newAccountBalance});
   }
 };
+
+export const addIncome = (key, category, incomeAmount, note) => {
+  return dispatch => {
+    const day = new Date().toDateString();
+    const income = {
+      category: category,
+      incomeAmount: incomeAmount,
+      note: note,
+      date: day
+    };
+    let preAccountBalance;
+    firebaseApp.database().ref('places').child(key)
+      .on('value', (snappshot) => {
+        preAccountBalance = snappshot.val().initialAccountBalance;
+      }, function (error) { });
+    let newAccountBalance = Number(preAccountBalance) + Number(income.incomeAmount);
+    firebaseApp.database().ref('places').child(key).child('income').push(income);
+    firebaseApp.database().ref('places').child(key).update({initialAccountBalance: newAccountBalance});
+  }
+};
+
+
 
 export const updateAccount = (key, note) => {
   return dispatch => {

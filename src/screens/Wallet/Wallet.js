@@ -22,7 +22,7 @@ class Wallet extends Component {
     }
   };
   itemSelectedHandler = key => {
-    const selPlace = this.props.places.find(place => {
+    const selPlace = this.props.accounts.find(place => {
       return place.key === key
     });
     this.props.navigator.push({
@@ -47,7 +47,8 @@ class Wallet extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <PlaceList places={this.props.places}
+        <Text style={styles.textHeader}>Total account: {this.props.accounts.length}</Text>
+        <PlaceList places={this.props.accounts}
                    onItemSelected={this.itemSelectedHandler}
         />
         <TouchableOpacity style={styles.addButton} onPress={this.onAddWalletHandler}>
@@ -60,7 +61,7 @@ class Wallet extends Component {
 
 const mapStateToProps = state => {
   return {
-    places: state.places.places
+    accounts: state.places.places
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -75,6 +76,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#C4C5C0",
     width: "100%",
     height: "100%"
+  },
+  textHeader: {
+    fontSize: 15,
+    textAlign: "center"
   },
   addButtonIcon: {
    color: "white"

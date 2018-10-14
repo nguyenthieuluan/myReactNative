@@ -5,6 +5,7 @@ import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import PieChart from 'react-native-pie-chart';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Item from "./layout/Item";
+import { connect } from 'react-redux';
 
 class Summary extends Component{
   constructor(props) {
@@ -21,6 +22,9 @@ class Summary extends Component{
     }
   };
   render() {
+    const currentBalance = this.props.account.reduce(function(prev, cur) {
+      return prev + cur.initialAccountBalance;
+    }, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     const chart_wh = 150;
     const series = [123, 321];
     const sliceColor = ['#F44336','#2196F3'];
@@ -33,7 +37,7 @@ class Summary extends Component{
             <MainText>
               <HeadingText style={styles.headingText}>Current Balance</HeadingText>
             </MainText>
-            <Text>1000.000 VND</Text>
+            <Text>{currentBalance} VNĐ</Text>
           </View>
           <View style={styles.uiBlock}>
             <MainText>
@@ -67,7 +71,12 @@ class Summary extends Component{
   }
 }
 
-export default Summary;
+const mapStateToProps = state => {
+  return {
+    account: state.places.places
+  };
+};
+export default connect(mapStateToProps, null)(Summary);
 
 const styles = StyleSheet.create({
   container: {

@@ -9,7 +9,7 @@ const walletItem = props => (
       {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
       <View style={styles.listItem}>
         <Text style={styles.nameWallet}>{props.placeName}</Text>
-        <Text style={styles.balanceWallet}>{props.initialAccountBalance}</Text>
+        <Text style={styles.balanceWallet}>{props.initialAccountBalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VNĐ</Text>
       </View>
     </View>
   </TouchableOpacity>

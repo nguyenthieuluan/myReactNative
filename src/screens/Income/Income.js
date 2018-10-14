@@ -2,16 +2,12 @@ import React, {Component} from 'react';
 import {Button, Picker, StyleSheet, Text, TextInput, View} from "react-native";
 import {addPlace, getPlaces} from "../../action";
 import { connect } from 'react-redux';
+import IncomeInput from "../../components/IcomeInput/IncomeInput";
 
 class Income extends Component{
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-    this.props.onLoadPlaces();
-    this.categorys = ['Bonus', 'Interest', 'Salary', 'Borrow money', 'Awarded', 'Sell things', 'Other revenues'];
-    this.state = {
-      selected : "Select a account!"
-    }
   }
   onNavigatorEvent = event => {
     if (event.type === "NavBarButtonPress") {
@@ -22,54 +18,11 @@ class Income extends Component{
       }
     }
   };
-  renderAccount() {
-    const items = [];
-    for (let item of this.props.places) {
-      items.push(<Picker.Item key={item.key} label={item.name} value={item.name}/>)
-    }
-    return items;
-  }
 
-  renderCategory() {
-    const items = [];
-    for (let item of this.categorys) {
-      items.push((<Picker.Item key={item} label={item.toString()} value={item}/>))
-    }
-    return items;
-  }
-  placeAddedHandler = (placeName, initialAccountBalance) => {
-    // this.props.navigator.pop();
-    // this.props.onAddPlace(placeName, initialAccountBalance);
-  };
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.uiBlock}>
-        <Text title="Account">Account</Text>
-        <Picker
-          selectedValue={this.state.selected}
-          //  onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}
-        >
-          {this.renderAccount()}
-        </Picker>
-        <Text title="Category">Category</Text>
-        <Picker
-          selectedValue={this.state.selected}
-          //  onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}
-        >
-          {this.renderCategory()}
-        </Picker>
-
-        <TextInput style={styles.moneyInput} placeholder="Amount of money"/>
-        <TextInput style={styles.moneyInput} placeholder="Note"/>
-
-        <Button
-          onPress={this.placeAddedHandler}
-          title="Save"
-          style={styles.placeButton}
-          //onPress={this.placeSubmitHandler}
-        />
-        </View>
+        <IncomeInput/>
       </View>
     )
   }

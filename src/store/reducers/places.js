@@ -5,18 +5,6 @@ const initialState = {
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    // case ADD_PLACE:
-    //   return {
-    //     ...state,
-    //     places: state.places.concat({
-    //       key: Math.random(),
-    //       name: action.placeName,
-    //       image: {
-    //         uri:
-    //           "https://c1.staticflickr.com/5/4096/4744241983_34023bf303_b.jpg"
-    //       }
-    //     })
-    //   };
     case SET_PLACE:
       return {
         ...state,
@@ -29,18 +17,6 @@ const reducer = (state = initialState, action) => {
           return place.key !== action.placeKey;
         })
       };
-    // case SELECT_PLACE:
-    //   return {
-    //     ...state,
-    //     selectedPlace: state.places.find(place => {
-    //       return place.key === action.key;
-    //     })
-    //   };
-    // case DESELECT_PLACE:
-    //   return {
-    //     ...state,
-    //     selectedPlace: null
-    //   };
     default:
       return state;
   }
