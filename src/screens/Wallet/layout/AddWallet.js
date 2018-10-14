@@ -27,7 +27,9 @@ class AddWallet extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <AccountInput onPlaceAdded={this.placeAddedHandler} />
+        <View style={styles.uiBlock}>
+          <AccountInput  onPlaceAdded={this.placeAddedHandler} />
+        </View>
       </View>
     )
   }
@@ -46,5 +48,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#C4C5C0",
     width: "100%",
     height: "100%"
+  },
+  uiBlock: {
+    backgroundColor: "white",
+    margin: 5,
+    padding: 10,
+    borderRadius: 5
   }
 });

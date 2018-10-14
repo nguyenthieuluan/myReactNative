@@ -25,7 +25,8 @@ export const getPlaces = () => {
           name: doc.toJSON().name,
           initialAccountBalance: doc.toJSON().initialAccountBalance,
           note: doc.toJSON().note,
-          expense: doc.toJSON().expense
+          expense: doc.toJSON().expense,
+          income: doc.toJSON().income
         })
       });
       dispatch(setPlaces(places));

@@ -3,30 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Item = props => (
-  <TouchableOpacity>
-    <View style={styles.listItemContainer}>
-      <Icon style={styles.walletIcon} name="ios-bus" size={40} color="#01a699" />
-      {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
-      <View style={styles.listItem}>
-        <Text style={styles.nameWallet}>Move</Text>
-        <Text style={styles.balanceWallet}>note</Text>
-      </View>
-      <View>
-        <Text>5000 VND</Text>
-      </View>
-    </View>
-    <View style={styles.listItemContainer}>
-      <Icon style={styles.walletIcon} name="ios-cart" size={40} color="#01a699" />
-      {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
-      <View style={styles.listItem}>
-        <Text style={styles.nameWallet}>Shopping</Text>
-        <Text style={styles.balanceWallet}>no note</Text>
-      </View>
-      <View>
-        <Text>9000 VND</Text>
-      </View>
-    </View>
-  </TouchableOpacity>
+  <View>
+
+  </View>
 );
 
 const styles = StyleSheet.create({

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const expenseIncomeItem = props => (
   <TouchableOpacity onPress={props.onItemPressed}>
     <View style={styles.listItemContainer}>
-      <Icon style={styles.walletIcon} name="ios-bus" size={40} color="#01a699" />
+      <Icon style={styles.walletIcon} name="ios-arrow-dropup" size={40} color="#01a699" />
       {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
       <View style={styles.listItem}>
         <Text style={styles.nameWallet}>{props.category}</Text>

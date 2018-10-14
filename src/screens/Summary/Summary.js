@@ -6,6 +6,7 @@ import PieChart from 'react-native-pie-chart';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Item from "./layout/Item";
 import { connect } from 'react-redux';
+import ExpenseIncomeList from "../../components/ExpenseIncomeList/ExpenseIncomeList";
 
 class Summary extends Component{
   constructor(props) {
@@ -22,12 +23,73 @@ class Summary extends Component{
     }
   };
   render() {
+    //Get total balance
     const currentBalance = this.props.account.reduce(function(prev, cur) {
       return prev + cur.initialAccountBalance;
     }, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    //Get total income expense
+    let expenseList = [];
+    let incomeList = [];
+    for (const [key, value] of Object.entries(this.props.account)) {
+      for(const [key1, value1] of Object.entries(value)) {
+        if(key1 === 'expense' && value1 !== null) {
+          let valueTemp = [];
+          if (typeof value1 === 'object') {
+            valueTemp = value1;
+          }
+          for(const [key2, value2] of Object.entries(valueTemp)) {
+            expenseList.push({
+              key: key2,
+              category: value2.category,
+              note: value2.note,
+              expenseAmount: value2.expenseAmount,
+              date: value2.date
+            })
+          }
+        }
+        if(key1 === 'income' && value1 !== null) {
+          let valueTemp = [];
+          if (typeof value1 === 'object') {
+            valueTemp = value1;
+          }
+          for(const [key3, value3] of Object.entries(valueTemp)) {
+            incomeList.push({
+              key: key3,
+              category: value3.category,
+              note: value3.note,
+              incomeAmount: value3.incomeAmount,
+              date: value3.date
+            })
+          }
+        }
+      }
+    }
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+    if(expenseList.length > 0) {
+      totalExpense = expenseList.reduce(function(prev, cur) {
+        return prev + Number(cur.expenseAmount);
+      }, 0);
+    }
+    if(incomeList.length > 0) {
+      totalIncome = incomeList.reduce(function(prev, cur) {
+        return prev + Number(cur.incomeAmount);
+      }, 0);
+    }
+
+
+    // Chart
     const chart_wh = 150;
-    const series = [123, 321];
-    const sliceColor = ['#F44336','#2196F3'];
+    let redExpense = 1;
+    let blueIncome = 1;
+    if(totalIncome > 0 && totalExpense > 0) {
+      redExpense = totalExpense;
+      blueIncome = totalIncome;
+    }
+    const series = [redExpense, blueIncome];
+    const sliceColor = ['#2196F3','#F44336'];
     const time = new Date();
     return (
       <View style={styles.container}>
@@ -53,16 +115,21 @@ class Summary extends Component{
                       coverRadius={0.45}
                       coverFill={'#FFF'}
             />
-            <Icon style={{color: "#F44336"}} size={15} name="md-square">
-              <Text> Income</Text>
-            </Icon>
-            <Icon style={{color: '#2196F3'}} size={15} name="md-square">
-              <Text> Expense</Text>
-            </Icon>
+            <View style={styles.iconText}>
+              <Icon style={{color: "#F44336"}} size={15} name="md-square">
+                <Text> Income: {totalIncome.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VND</Text>
+              </Icon>
+              <Icon style={{color: '#2196F3'}} size={15} name="md-square">
+                <Text> Expense: {totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VND</Text>
+              </Icon>
+            </View>
           </View>
           <View style={styles.uiBlockContent}>
-            <Text style={styles.timeHeader}>{time.toDateString()}</Text>
-            <Item/>
+            {/*<Text style={styles.timeHeader}>{time.toDateString()}</Text>*/}
+            <ScrollView>
+              <ExpenseIncomeList expense = {expenseList}
+                                 onItemSelected={()=>{}}/>
+            </ScrollView>
           </View>
         </View>
       </ScrollView>
@@ -99,10 +166,13 @@ const styles = StyleSheet.create({
   },
   uiBlockContent: {
     backgroundColor: "white",
-    margin: 5,
+    margin: 4,
     padding: 10
   },
   timeHeader: {
     fontSize: 15
+  },
+  iconText: {
+    marginTop: 8
   }
 });
