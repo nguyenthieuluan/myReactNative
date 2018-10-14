@@ -65,6 +65,9 @@ class Summary extends Component{
         }
       }
     }
+    expenseList = expenseList.sort(function(a,b){
+      return new Date(b.date) - new Date(a.date);
+    });
 
     let totalIncome = 0;
     let totalExpense = 0;

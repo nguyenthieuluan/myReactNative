@@ -45,6 +45,9 @@ class walletDetail extends Component {
         date: value.date
       })
     }
+    expenseList = expenseList.sort(function(a,b){
+      return new Date(b.date) - new Date(a.date);
+    });
     return (
       <View style={styles.container}>
         <View style={styles.uiBlock}>
