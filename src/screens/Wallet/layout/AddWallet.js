@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 import { connect } from 'react-redux';
 
-
-import PlaceInput from "../../../components/PlaceInput/PlaceInput";
 import {addPlace} from "../../../action";
+import AccountInput from "../../../components/AccountInput/AccountInput";
 
 class AddWallet extends Component{
   constructor(props) {
@@ -21,14 +20,14 @@ class AddWallet extends Component{
     }
   };
 
-  placeAddedHandler = (placeName, initialAccountBalance) => {
+  placeAddedHandler = (placeName, initialAccountBalance, note) => {
     this.props.navigator.pop();
-    this.props.onAddPlace(placeName, initialAccountBalance)
+    this.props.onAddPlace(placeName, initialAccountBalance, note)
   };
   render() {
     return (
       <View style={styles.container}>
-        <PlaceInput onPlaceAdded={this.placeAddedHandler} />
+        <AccountInput onPlaceAdded={this.placeAddedHandler} />
       </View>
     )
   }
@@ -36,7 +35,7 @@ class AddWallet extends Component{
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: (placeName, initialAccountBalance) => dispatch(addPlace(placeName, initialAccountBalance))
+    onAddPlace: (placeName, initialAccountBalance, note) => dispatch(addPlace(placeName, initialAccountBalance, note))
   };
 };
 

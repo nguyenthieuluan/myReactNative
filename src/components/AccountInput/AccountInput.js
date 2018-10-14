@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 
-class PlaceInput extends Component {
+class AccountInput extends Component {
   state = {
     placeName: "",
-    initialAccountBalance: ""
+    initialAccountBalance: "",
+    note: ""
   };
-
-  componentDidMount() {
-    
-  }
 
   placeNameChangedHandler = val => {
     this.setState({
@@ -21,12 +18,17 @@ class PlaceInput extends Component {
       initialAccountBalance: val
     });
   };
+  noteChangedHandler = val => {
+    this.setState({
+      note: val
+    });
+  };
   placeSubmitHandler = () => {
     if (this.state.placeName.trim() === "" || this.state.initialAccountBalance.trim() === "") {
       alert('Please enter your account info.');
       return;
     }
-    this.props.onPlaceAdded(this.state.placeName, this.state.initialAccountBalance);
+    this.props.onPlaceAdded(this.state.placeName, this.state.initialAccountBalance, this.state.note);
   };
 
   render() {
@@ -47,8 +49,8 @@ class PlaceInput extends Component {
         />
         <TextInput
           placeholder="Note"
-          value={this.state.initialAccountBalance}
-          onChangeText={this.initialAccountBalanceChangedHandler}
+          value={this.state.note}
+          onChangeText={this.noteChangedHandler}
           style={styles.placeInput}
         />
         <Button
@@ -77,4 +79,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PlaceInput;
+export default AccountInput;

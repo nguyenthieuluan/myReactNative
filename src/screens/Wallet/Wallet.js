@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Text, TouchableOpacity, View, StyleSheet} from "react-native";
 
 import {connect} from 'react-redux';
-import PlaceList from '../../components/PlaceList/PlaceList';
+import PlaceList from '../../components/WalletList/WalletList';
 import {getPlaces} from "../../action";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -26,7 +26,7 @@ class Wallet extends Component {
       return place.key === key
     });
     this.props.navigator.push({
-      screen: "awesome-places.PlaceDetailScreen",
+      screen: "awesome-places.WalletDetailScreen",
       title: selPlace.name,
       passProps: {
         selectedPlace: selPlace

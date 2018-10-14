@@ -25,7 +25,7 @@ class Income extends Component{
   renderAccount() {
     const items = [];
     for (let item of this.props.places) {
-      items.push(<Picker.item key={item.key} label={item.name} value={item.name}/>)
+      items.push(<Picker.Item key={item.key} label={item.name} value={item.name}/>)
     }
     return items;
   }
@@ -33,7 +33,7 @@ class Income extends Component{
   renderCategory() {
     const items = [];
     for (let item of this.categorys) {
-      items.push(<Picker.item key={item} label={item.toString()} value={item}/>)
+      items.push((<Picker.Item key={item} label={item.toString()} value={item}/>))
     }
     return items;
   }

@@ -1,45 +1,21 @@
 import {ADD_PLACE, DELETE_PLACE, SET_PLACE} from "./actionTypes";
 import {firebaseApp} from "../config/FirebaseConfig";
 
-export const addPlace = (placeName, initialAccountBalance) => {
-  // return dispatch => {
-  //   const placeData = {
-  //     name: placeName,
-  //   };
-  //   fetch("https://myawesomeapp-8628a.firebaseio.com/places.json", {
-  //     method: "POST",
-  //     body: JSON.stringify(placeData)
-  //   })
-  //     .catch(err => console.log(err))
-  //     .then(res => res.json())
-  //     .then(parseRes => {console.log(parseRes);
-  //   })
-  // }
+export const addPlace = (placeName, initialAccountBalance, note) => {
   return dispatch => {
     const walletData = {
       name: placeName,
-      initialAccountBalance: initialAccountBalance
+      initialAccountBalance: initialAccountBalance,
+      note: note,
+      expense: [],
+      income: []
     };
     firebaseApp.database().ref('places').push(walletData);
   }
 };
 // load data
 export const getPlaces = () => {
-  // return dispatch => {
-  //   fetch("https://myawesomeapp-8628a.firebaseio.com/places.json")
-  //     .catch( err => alert('Có lỗi xảy ra, vui lòng tải lại'))
-  //     .then(res => res.json())
-  //     .then(parsedRes => {
-  //       const places = [];
-  //       for (let key in parsedRes) {
-  //         places.push({
-  //           ...parsedRes[key],
-  //           key: key
-  //         })
-  //       }
-  //       dispatch(setPlaces(places));
-  //     })
-  // }
+
   return dispatch => {
     firebaseApp.database().ref('places').on('value', (childSnappshot) => {
       const places = [];
@@ -47,7 +23,8 @@ export const getPlaces = () => {
         places.push({
           key: doc.key,
           name: doc.toJSON().name,
-          initialAccountBalance: doc.toJSON().initialAccountBalance
+          initialAccountBalance: doc.toJSON().initialAccountBalance,
+          note: doc.toJSON().note
         })
       });
       dispatch(setPlaces(places));
@@ -67,14 +44,29 @@ export const deletePlace = (key) => {
     firebaseApp.database().ref('places').child(key).remove();
   }
 };
-// export const selectPlace = (key) => {
-//   return {
-//     type: SELECT_PLACE,
-//     key: key
-//   }
-// };
-// export const deselectPlace = () => {
-//   return {
-//     type: DESELECT_PLACE
-//   }
-// };
+
+export const addExpense = (key, category, expenseAmount, note) => {
+  return dispatch => {
+    const day = new Date().toDateString();
+    const expense = {
+      category: category,
+      expenseAmount: expenseAmount,
+      note: note,
+      date: day
+    };
+    let preAccountBalance;
+    firebaseApp.database().ref('places').child(key)
+      .on('value', (snappshot) => {
+        preAccountBalance = snappshot.val().initialAccountBalance;
+      }, function (error) { });
+    let newAccountBalance = preAccountBalance - expense.expenseAmount;
+    firebaseApp.database().ref('places').child(key).child('expense').push(expense);
+    firebaseApp.database().ref('places').child(key).update({initialAccountBalance: newAccountBalance});
+  }
+};
+
+export const updateAccount = (key, note) => {
+  return dispatch => {
+    firebaseApp.database().ref('places').child(key).update({note: note});
+  }
+};

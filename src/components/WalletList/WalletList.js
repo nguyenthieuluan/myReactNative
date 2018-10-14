@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, FlatList } from "react-native";
 
-import ListItem from "../ListItem/ListItem";
+import ListItem from "./WalletItem/WalletItem";
 
-const placeList = props => {
+const walletList = props => {
   return (
     <FlatList
       style={styles.listContainer}
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default placeList;
+export default walletList;
