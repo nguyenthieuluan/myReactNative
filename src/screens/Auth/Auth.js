@@ -1,57 +1,81 @@
 import React, { Component } from 'react';
-import {Button, TextInput, Text, View, StyleSheet, ImageBackground} from "react-native";
+import {Button, TextInput, Text, View, StyleSheet, ImageBackground, TouchableOpacity} from "react-native";
 import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefauItInput';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
 import MainText from '../../components/UI/MainText/MainText';
 import backgroundImage from '../../assets/background.jpg';
-
+import {firebaseApp} from "../../config/FirebaseConfig";
+import * as Alert from "react-native";
 
 class AuthScreen extends Component {
-  state = {
-    controls: {
-      email: {
-        value: "",
-        valid: false,
-        validationRules: {
-          isEmail: true
-        }
-      },
-      password: {
-        value: "",
-        valid: false,
-        validationRules: {
-          minLength: 6
-        }
-      },
-      confirmPassword: {
-        value: "",
-        valid: false,
-        validationRules: {
-          equalTo: 'password'
-        }
-      },
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      confirmPassword: "",
+      viewMode: 'login'
     }
-  };
+  }
+
 
   updateInputState = (key, value) => {
     this.setState(prevState => {
-      return {
-        controls: {
-          ...prevState.controls,
-          [key]: {
-            ...prevState.controls[key],
-            value: value
-          }
-        }
-      }
+      return
     })
   };
 
   loginHandler = () => {
-    startMainTabs();
+
+    if (this.state.viewMode === 'register') {
+      this.setState({viewMode: 'login'})
+    }
+    if (this.state.email === "" || this.state.password === "")
+      return false;
+
+    // firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    //   .then(()=>{
+    //     //startMainTabs();
+    //     alert('ngon');
+    //   })
+    //   .catch(function (error) {
+    //     Alert.alert('k ngon');
+    //   })
+    //alert(this.state.email+this.state.password);
+  };
+  registerHandler = () => {
+    if (this.state.viewMode === 'login') {
+      this.setState({viewMode: 'register'})
+    }
+    if (this.state.password !== this.state.confirmPassword) {
+      alert('Password not match!');
+      return false;
+    }
+    // firebaseApp.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    //   .then(()=>{
+    //     alert('Successfully registered');
+    //     this.setState({
+    //       email: '',
+    //       password: '',
+    //       viewMode: 'login'
+    //     })
+    //   })
+    //   .catch(function (error) {
+    //     alert(error)
+    //   })
   };
   render() {
+    let confirmPassword = null;
+    if(this.state.viewMode === 'register') {
+      confirmPassword = (<DefaultInput placeholder="ConfirmPassword" style={styles.input}
+                                       value = {this.state.password.value}
+                                       onChangeText = {(val) => this.setState({'confirmPassword': val})}
+      />);
+    }
+    if(this.state.viewMode === 'login') {
+      confirmPassword = null
+    }
     return (
       <ImageBackground style={styles.backgroundImage} source={backgroundImage}>
         <View style={styles.container}>
@@ -60,21 +84,26 @@ class AuthScreen extends Component {
           </MainText>
           <Button title="Đăng Nhập" onPress={this.loginHandler}/>*/}
           <View style={styles.inputContainer}>
-            <DefaultInput placeholder="Email của bạn" style={styles.input}
-                          value = {this.state.controls.email.value}
-                          onChangeText = {(val) => this.updateInputState('email',val)}
+            <DefaultInput placeholder="Email" style={styles.input}
+                          value = {this.state.email.value}
+                          onChangeText = {(val) => this.setState({'email': val})}
             />
-            <DefaultInput placeholder="Mật khẩu" style={styles.input}
-                          value = {this.state.controls.password.value}
-                          onChangeText = {(val) => this.updateInputState('password', val)}
+            <DefaultInput placeholder="Password" style={styles.input}
+                          value = {this.state.password.value}
+                          onChangeText = {(val) => this.setState({'password': val})}
             />
-
-            {/*<DefaultInput placeholder="Xác nhận mật khẩu" style={styles.input}
-                          value = {this.state.controls.confirmPassword.value}
-                          onChangeText = {(val) => this.updateInputState('confirmPassword', val)}
-            />*/}
+            {confirmPassword}
           </View>
-          <Button style={styles.loginButton} title="Login" onPress={this.loginHandler}/>
+          <TouchableOpacity style={styles.loginOpacity} onPress={this.loginHandler}>
+            <View>
+              <Text style={styles.loginButton}>Login</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.registerOpacity} title="Register" onPress={this.registerHandler}>
+            <View>
+              <Text style={styles.loginButton}>Register</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     )
@@ -98,10 +127,22 @@ const styles = StyleSheet.create({
     borderColor: "transparent"
   },
   loginButton: {
-  	backgroundColor: "transparent",
-  	borderColor: "#eee",
-  	width: 500,
-  	borderRadius:10
+  	fontSize: 20,
+    color: "black",
+  },
+  loginOpacity: {
+    borderWidth: 1,
+    borderColor: "#eee",
+    width: 100,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  registerButton: {
+    backgroundColor: "red",
+    width: 200
+  },
+  registerOpacity: {
+    marginTop: 10,
   }
 });
 export default AuthScreen;
