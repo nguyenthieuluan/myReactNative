@@ -1,19 +1,16 @@
 import React from "react";
 import { StyleSheet, FlatList } from "react-native";
-
 import ListItem from "./WalletItem/WalletItem";
 
 const walletList = props => {
   return (
     <FlatList
       style={styles.listContainer}
-      data={props.places}
+      data={props.users}
       renderItem={(info) => (
         <ListItem
-          placeName={info.item.name}
-          initialAccountBalance={info.item.initialAccountBalance}
-          placeImage={info.item.image}
-          onItemPressed={() => props.onItemSelected(info.item.key)}
+          userName={info.item.userName}
+          password={info.item.password}
         />
       )}
     />

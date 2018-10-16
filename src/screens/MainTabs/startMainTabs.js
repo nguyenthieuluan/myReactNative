@@ -28,57 +28,6 @@ const startTabs = () => {
             ]
           }
         },
-
-        // Wallet
-        {
-          screen: "awesome-places.Wallet",
-          label: "Wallet",
-          icon: sourcers[1],
-          title: "Wallet",
-          navigatorButtons: {
-            leftButtons: [
-              {
-                icon: sourcers[4],
-                title: "menu",
-                id: "sideDrawerToggle"
-              }
-            ]
-          }
-        },
-
-        // Spent
-        {
-          screen: "awesome-places.Spent",
-          label: "Spent",
-          icon: sourcers[2],
-          title: "Spent",
-          navigatorButtons: {
-            leftButtons: [
-              {
-                icon: sourcers[4],
-                title: "menu",
-                id: "sideDrawerToggle"
-              }
-            ]
-          }
-        },
-
-        // Income
-        {
-          screen: "awesome-places.Income",
-          label: "Income",
-          icon: sourcers[3],
-          title: "Income",
-          navigatorButtons: {
-            leftButtons: [
-              {
-                icon: sourcers[4],
-                title: "menu",
-                id: "sideDrawerToggle"
-              }
-            ]
-          }
-        }
       ],
 
       // Drawer

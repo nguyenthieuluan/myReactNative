@@ -1,15 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const walletItem = props => (
   <TouchableOpacity onPress={props.onItemPressed}>
     <View style={styles.listItemContainer}>
-      <Icon name="md-bookmarks" style={styles.walletIcon} size={40} color="#01a699" />
-      {/*<Image resizeMode="cover" source={props.placeImage} style={styles.placeImage} />*/}
       <View style={styles.listItem}>
-        <Text style={styles.nameWallet}>{props.placeName}</Text>
-        <Text style={styles.balanceWallet}>{props.initialAccountBalance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VNĐ</Text>
+        <Text style={styles.nameWallet}>{props.userName}</Text>
+        <Text style={styles.balanceWallet}>{props.password}</Text>
       </View>
     </View>
   </TouchableOpacity>
