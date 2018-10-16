@@ -26,18 +26,19 @@ class AuthScreen extends Component {
       });
       return false;
     }
-    startMainTabs();
+    //startMainTabs();
     if (this.state.email === "" || this.state.password === "")
       return false;
 
-    // firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    //   .then(()=>{
-    //     startMainTabs();
-    //     //alert('ngon');
-    //   })
-    //   .catch(function (error) {
-    //     Alert.alert(error.toString());
-    //   });
+    firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(()=>{
+        //alert(this.state.password)
+        startMainTabs();
+        //alert('ngon');
+      })
+      .catch(function (error) {
+        Alert.alert(error.toString());
+      });
   };
   registerHandler = () => {
     if (this.state.viewMode === 'login') {

@@ -15,7 +15,7 @@ const expenseIncomeItem = props => (
         <Text style={styles.textDate}>{props.date}</Text>
       </View>
       <View>
-        <Text>{props.expenseAmount} VND</Text>
+        <Text>{props.expenseAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} VND</Text>
       </View>
     </View>
   </TouchableOpacity>
