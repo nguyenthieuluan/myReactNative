@@ -8,7 +8,6 @@ export const getPlaces = () => {
     firebaseApp.database().ref('users').on('value', (childSnappshot) => {
       const users = [];
       childSnappshot.forEach((doc) =>{
-        alert("1");
         users.push({
           key: doc.key,
           employees: doc.toJSON().employees

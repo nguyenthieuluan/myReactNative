@@ -4,42 +4,55 @@ import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefauItInput';
 import backgroundImage from '../../assets/background.jpg';
 import {firebaseApp} from "../../config/FirebaseConfig";
+import {getPlaces} from "../../action";
+import { connect } from 'react-redux';
 
 class AuthScreen extends Component {
   constructor(props) {
     super(props);
+    this.props.onLoadPlaces();
+
     this.state = {
       email: "",
       password: "",
     }
   }
-  loginHandler = () => {
-    startMainTabs();
-
-    if (this.state.viewMode === 'register') {
-      this.setState({
-        viewMode: 'login',
-        password: ""
-      });
-      return false;
+  loadUser () {
+    let userList = [];
+    for (const [key, value] of Object.entries(this.props.account)) {
+      for(const [key1, value1] of Object.entries(value)) {
+        if(key1 === 'employees' && value1 !== null) {
+          let valueTemp = [];
+          if (typeof value1 === 'object') {
+            valueTemp = value1;
+          }
+          for(const [key2, value2] of Object.entries(valueTemp)) {
+            userList.push({
+              key: key2,
+              userName: value2.name,
+              email: value2.phone,
+              password: value2.shift
+            })
+          }
+        }
+      }
     }
+    return userList;
+  };
+  loginHandler = () => {
+      startMainTabs();
     if (this.state.email === "" || this.state.password === "")
       return false;
-
+    let x =this.loadUser().filter(l => l.email === this.state.email);
+    if(x.length > 0 && x[0].password === this.state.password) {
+      startMainTabs();
+    } else {
+      alert('wrong email or password!');
+    }
   };
 
   render() {
-    let confirmPassword = null;
-    if(this.state.viewMode === 'register') {
-      confirmPassword = (<DefaultInput placeholder="ConfirmPassword" style={styles.input}
-                                       value = {this.state.password.value}
-                                       secureTextEntry={true}
-                                       onChangeText = {(val) => this.setState({'confirmPassword': val})}
-      />);
-    }
-    if(this.state.viewMode === 'login') {
-      confirmPassword = null
-    }
+
     return (
       <ImageBackground style={styles.backgroundImage} source={backgroundImage}>
         <View style={styles.container}>
@@ -53,7 +66,6 @@ class AuthScreen extends Component {
                           secureTextEntry={true}
                           onChangeText = {(val) => this.setState({'password': val})}
             />
-            {confirmPassword}
           </View>
           <TouchableOpacity style={styles.loginOpacity} onPress={this.loginHandler}>
             <View>
@@ -104,4 +116,15 @@ const styles = StyleSheet.create({
     marginTop: 10,
   }
 });
-export default AuthScreen;
+const mapStateToProps = state => {
+  return {
+    account: state.places.places
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    onLoadPlaces: () => dispatch(getPlaces())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthScreen);
