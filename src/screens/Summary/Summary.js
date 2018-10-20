@@ -1,17 +1,26 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, ScrollView, StatusBar, TouchableOpacity, Switch} from "react-native";
-import MainText from "../../components/UI/MainText/MainText";
-import HeadingText from "../../components/UI/HeadingText/HeadingText";
-import Icon from 'react-native-vector-icons/Ionicons';
+import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
 import {getPlaces} from "../../action";
-import ToggleSwitch from 'toggle-switch-react-native'
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Summary extends Component{
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-    this.state = {isSwitchOn: false}
+    this.state = {
+      isSwitchOn: false,
+      region: {
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.015,
+        longitudeDelta: 0.0121,
+      },
+      marker: {
+        latitude: 37.78825,
+        longitude: -122.4324,
+      }
+    }
   }
   onNavigatorEvent = event => {
     if (event.type === "NavBarButtonPress") {
@@ -23,16 +32,45 @@ class Summary extends Component{
     }
   };
 
+  componentWillMount() {
+    navigator.geolocation.getCurrentPosition(r =>{
+      this.setState({
+        region: {
+          latitude: r.coords.latitude,
+          longitude: r.coords.longitude,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        },
+        marker: {
+          latitude: r.coords.latitude,
+          longitude: r.coords.longitude,
+        }
+      })
+    })
+  };
+
+  activeHandler = () => {
+    this.setState({
+        isSwitchOn: false
+      })
+  };
+
+  offlineHandler = () => {
+    this.setState({
+      isSwitchOn: true
+    })
+  };
+
   render() {
     let active = null;
     let offline = null;
     if (this.state.isSwitchOn) {
-      active = (<TouchableOpacity style={styles.active} onPress={() => this.setState({isSwitchOn: false})}>
+      active = (<TouchableOpacity style={styles.active} onPress={this.activeHandler}>
         <Text>Active</Text>
       </TouchableOpacity>);
       offline = null;
     } else {
-      offline = (<TouchableOpacity style={styles.offline} onPress={() => this.setState({isSwitchOn: true})}>
+      offline = (<TouchableOpacity style={styles.offline} onPress={this.offlineHandler}>
         <Text>Off</Text>
       </TouchableOpacity>);
       active = null;
@@ -46,6 +84,13 @@ class Summary extends Component{
           {active}
           {offline}
         </View>
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.mapView}
+          region={this.state.region}
+        >
+          <MapView.Marker coordinate={this.state.marker}/>
+        </MapView>
       </ScrollView>
       </View>
     )
@@ -92,5 +137,11 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "grey"
   },
+  mapView: {
+    margin: 5,
+    borderWidth: 1,
+    width: "100%",
+    height: 400
+  }
 
 });

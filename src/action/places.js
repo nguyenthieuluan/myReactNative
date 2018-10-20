@@ -3,7 +3,6 @@ import {firebaseApp} from "../config/FirebaseConfig";
 
 // load data
 export const getPlaces = () => {
-
   return dispatch => {
     firebaseApp.database().ref('users').on('value', (childSnappshot) => {
       const users = [];
@@ -24,3 +23,10 @@ export const setPlaces = places => {
     places: places
   }
 };
+
+// add location
+export const setCoordinate = () => {
+
+};
+
+
