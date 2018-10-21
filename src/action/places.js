@@ -25,8 +25,35 @@ export const setPlaces = places => {
 };
 
 // add location
-export const setCoordinate = () => {
-
+export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta) => {
+  alert(latitude)
+  return (dispatch, setPlaces) => {
+    //const account = setPlaces;
+    //console.log(JSON.stringify(account))
+    //firebaseApp.database().ref
+    alert(latitude)
+  }
 };
 
+export function someAction() {
+  return (dispatch, getState) => {
+    const {items} = getState().otherReducer;
 
+    dispatch(anotherAction(items));
+  }
+}
+
+export const employeeCreate = ({ name, phone, shift }) => {
+  const { currentUser } = firebase.auth()
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/employees`)
+      .push({ name, phone, shift })
+      .then(() => {
+        dispatch({
+          type: EMPLOYEE_CREATE 
+        })
+        Actions.pop()
+      })
+  }
+}

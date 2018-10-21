@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
-import {getPlaces} from "../../action";
+import {getPlaces, setCoordinate} from "../../action";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Summary extends Component{
@@ -11,14 +11,14 @@ class Summary extends Component{
     this.state = {
       isSwitchOn: false,
       region: {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: 10.787927,
+        longitude: 106.6136637,
         latitudeDelta: 0.015,
         longitudeDelta: 0.0121,
       },
       marker: {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: 10.787927,
+        longitude: 106.6136637,
       }
     }
   }
@@ -46,8 +46,33 @@ class Summary extends Component{
           longitude: r.coords.longitude,
         }
       })
-    })
+    }, error => console.log(error),
+    {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
   };
+
+  componentDidMount() {
+    const { coordinate } = this.state;
+    this.watchID = navigator.geolocation.watchPosition(
+      position => {
+        alert(JSON.stringify(position.coords));
+
+        this.setState({
+          region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          },
+          marker: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          }
+        })
+      }, error => console.log(error),
+      {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
+
+  }
+  
 
   activeHandler = () => {
     this.setState({
@@ -59,6 +84,7 @@ class Summary extends Component{
     this.setState({
       isSwitchOn: true
     })
+    this.props.setCoordinate(this.state.region.latitude, this.state.region.longitude, this.state.region.latitudeDelta, this.state.region.longitudeDelta);
   };
 
   render() {
@@ -104,7 +130,9 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onLoadPlaces: () => dispatch(getPlaces())
+    onLoadPlaces: () => dispatch(getPlaces()),
+    setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta) =>
+     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);

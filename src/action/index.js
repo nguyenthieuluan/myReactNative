@@ -1,1 +1,1 @@
-export { setPlaces, getPlaces} from './places'
+export { setPlaces, getPlaces, setCoordinate} from './places'   
