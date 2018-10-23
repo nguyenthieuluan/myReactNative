@@ -1,1 +1,1 @@
-export { setPlaces, setUser, getUser, getPlaces, setCoordinate} from './places'
+export { setPlaces, setUser, getUser, getPlaces, setCoordinate, changeStatus} from './places'

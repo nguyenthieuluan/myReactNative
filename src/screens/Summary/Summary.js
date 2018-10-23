@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
-import {getPlaces, setCoordinate} from "../../action";
+import {getPlaces, setCoordinate, changeStatus} from "../../action";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Summary extends Component{
@@ -49,6 +49,13 @@ class Summary extends Component{
       })
     }, error => console.log(error),
     {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
+    this.props.setCoordinate(
+      this.state.region.latitude, 
+      this.state.region.longitude, 
+      this.state.region.latitudeDelta, 
+      this.state.region.longitudeDelta,
+      this.props.user.admin,
+      this.props.user.key);
   };
 
   componentDidMount() {
@@ -83,20 +90,15 @@ class Summary extends Component{
   activeHandler = () => {
     this.setState({
         isSwitchOn: false
-      })
+      });
+    this.props.changeStatus('offline', this.props.user.admin, this.props.user.key);
   };
 
   offlineHandler = () => {
     this.setState({
       isSwitchOn: true
     });
-    this.props.setCoordinate(
-      this.state.region.latitude, 
-      this.state.region.longitude, 
-      this.state.region.latitudeDelta, 
-      this.state.region.longitudeDelta,
-      this.props.user.admin,
-      this.props.user.key);
+    this.props.changeStatus('active', this.props.user.admin, this.props.user.key);
   };
 
   render() {
@@ -117,7 +119,7 @@ class Summary extends Component{
       <View style={styles.container}>
       <ScrollView style={{flex: 1}}>
         <Text style={styles.textWelcome}>Hi {this.props.user.userName} !</Text>
-        <Text style={styles.textWelcome}> Your boss: {this.props.user.admin} </Text>
+        {/* <Text style={styles.textWelcome}> Your boss: {this.props.user.admin} </Text> */}
         <View style={styles.content}>
           {active}
           {offline}
@@ -145,7 +147,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoadPlaces: () => dispatch(getPlaces()),
     setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) =>
-     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey))
+     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey)),
+    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey))  
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);

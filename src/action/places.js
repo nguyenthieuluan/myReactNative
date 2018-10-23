@@ -55,13 +55,6 @@ export const setAdmin = admin => {
 // add location
 export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) => {
   return (dispatch, getState) => {
-
-    // const state = store.getState().places.places.length;
-
-    // alert(JSON.stringify(state));
-
-//    alert(adminKey)
-
     const newCoordinate = {  
       latitude: latitude, 
       longitude: longitude,
@@ -73,3 +66,12 @@ export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta
   }
 };
 
+// change status
+export const changeStatus = (status, adminKey, userKey) => {
+  return (dispatch, getState) => {
+    const newStatus = status;
+    //alert(status)
+    firebaseApp.database().ref('users').child(adminKey).child('employees').child(userKey)
+    .update({status: newStatus})
+  }
+};
