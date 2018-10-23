@@ -1,7 +1,9 @@
-import {SET_PLACE} from '../../action/actionTypes';
+import {SET_ADMIN, SET_PLACE, SET_USER} from '../../action/actionTypes';
 
 const initialState = {
-  places: []
+  places: [],
+  user: [],
+  admin: []
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -9,6 +11,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         places: action.places
+      };
+    case SET_USER:
+      return {
+        ...state,
+        user: action.user
+      };
+    case SET_ADMIN:
+      return {
+        ...state,
+        admin: action.admin
       };
     default:
       return state;

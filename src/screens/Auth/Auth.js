@@ -4,23 +4,24 @@ import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefauItInput';
 import backgroundImage from '../../assets/background.jpg';
 import {firebaseApp} from "../../config/FirebaseConfig";
-import {getPlaces} from "../../action";
+import {getPlaces, getUser, setUser} from "../../action";
 import { connect } from 'react-redux';
 
 class AuthScreen extends Component {
   constructor(props) {
     super(props);
     this.props.onLoadPlaces();
-
     this.state = {
       email: "",
       password: "",
     }
   }
   loadUser () {
+    //alert(JSON.stringify(this.props.account))
     let userList = [];
     for (const [key, value] of Object.entries(this.props.account)) {
       for(const [key1, value1] of Object.entries(value)) {
+        //alert(JSON.stringify(value1))
         if(key1 === 'employees' && value1 !== null) {
           let valueTemp = [];
           if (typeof value1 === 'object') {
@@ -31,7 +32,8 @@ class AuthScreen extends Component {
               key: key2,
               userName: value2.name,
               email: value2.phone,
-              password: value2.shift
+              password: value2.shift,
+              admin: value.key
             })
           }
         }
@@ -40,11 +42,16 @@ class AuthScreen extends Component {
     return userList;
   };
   loginHandler = () => {
-      startMainTabs();
     if (this.state.email === "" || this.state.password === "")
       return false;
-    let x =this.loadUser().filter(l => l.email === this.state.email);
+    let x = this.loadUser().filter(l => l.email === this.state.email);
     if(x.length > 0 && x[0].password === this.state.password) {
+      this.props.getUser(x[0]);
+
+      // this.setState({
+      //
+      // })
+      //alert(JSON.stringify(x[0]));
       startMainTabs();
     } else {
       alert('wrong email or password!');
@@ -118,12 +125,14 @@ const styles = StyleSheet.create({
 });
 const mapStateToProps = state => {
   return {
-    account: state.places.places
+    account: state.places.places,
+    user: state.places.user
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onLoadPlaces: () => dispatch(getPlaces())
+    onLoadPlaces: () => dispatch(getPlaces()),
+    getUser: (user) => dispatch(getUser(user))
   };
 };
 

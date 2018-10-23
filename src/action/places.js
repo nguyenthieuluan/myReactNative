@@ -1,5 +1,7 @@
-import {SET_PLACE} from "./actionTypes";
+import {SET_ADMIN, SET_PLACE, SET_USER} from "./actionTypes";
 import {firebaseApp} from "../config/FirebaseConfig";
+import configureStore from "../store/configureStore";
+const store = configureStore();
 
 // load data
 export const getPlaces = () => {
@@ -16,7 +18,6 @@ export const getPlaces = () => {
     }, function (error) { })
   }
 };
-
 export const setPlaces = places => {
   return {
     type: SET_PLACE,
@@ -24,36 +25,46 @@ export const setPlaces = places => {
   }
 };
 
-// add location
-export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta) => {
-  alert(latitude)
-  return (dispatch, setPlaces) => {
-    //const account = setPlaces;
-    //console.log(JSON.stringify(account))
-    //firebaseApp.database().ref
-    alert(latitude)
+// get active user
+export const getUser = (user) => {
+  return dispatch => {
+      dispatch(setUser(user));
+  }
+};
+export const setUser = user => {
+  return {
+    type: SET_USER,
+    user: user
   }
 };
 
-export function someAction() {
+// get manager
+export const getAdmin = () => {
+  return dispatch => {
+    dispatch(setAdmin(admin));
+}
+};
+export const setAdmin = admin => {
+  return {
+    type: SET_ADMIN,
+    admin: admin
+  }
+};
+
+
+// add location
+export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta) => {
   return (dispatch, getState) => {
-    const {items} = getState().otherReducer;
 
-    dispatch(anotherAction(items));
+    const state = store.getState().places.places.length;
+
+    alert(JSON.stringify(state));
+
+    //alert()
+    //const account = setPlaces;
+    //console.log(JSON.stringify(account))
+    //firebaseApp.database().ref
+    //alert(latitude)
   }
-}
+};
 
-export const employeeCreate = ({ name, phone, shift }) => {
-  const { currentUser } = firebase.auth()
-
-  return (dispatch) => {
-    firebase.database().ref(`/users/${currentUser.uid}/employees`)
-      .push({ name, phone, shift })
-      .then(() => {
-        dispatch({
-          type: EMPLOYEE_CREATE 
-        })
-        Actions.pop()
-      })
-  }
-}

@@ -7,6 +7,7 @@ import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 class Summary extends Component{
   constructor(props) {
     super(props);
+    this.props.onLoadPlaces();
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.state = {
       isSwitchOn: false,
@@ -54,8 +55,6 @@ class Summary extends Component{
     const { coordinate } = this.state;
     this.watchID = navigator.geolocation.watchPosition(
       position => {
-        alert(JSON.stringify(position.coords));
-
         this.setState({
           region: {
             latitude: position.coords.latitude,
@@ -83,7 +82,7 @@ class Summary extends Component{
   offlineHandler = () => {
     this.setState({
       isSwitchOn: true
-    })
+    });
     this.props.setCoordinate(this.state.region.latitude, this.state.region.longitude, this.state.region.latitudeDelta, this.state.region.longitudeDelta);
   };
 
@@ -101,11 +100,11 @@ class Summary extends Component{
       </TouchableOpacity>);
       active = null;
     }
-
-
     return (
       <View style={styles.container}>
       <ScrollView style={{flex: 1}}>
+        <Text style={styles.textWelcome}>Hi {this.props.user.userName} !</Text>
+        <Text style={styles.textWelcome}> Your boss: {this.props.user.admin} </Text>
         <View style={styles.content}>
           {active}
           {offline}
@@ -125,7 +124,8 @@ class Summary extends Component{
 
 const mapStateToProps = state => {
   return {
-    account: state.places.places
+    account: state.places.places,
+    user: state.places.user
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -170,6 +170,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: "100%",
     height: 400
+  },
+  textWelcome: {
+    textAlign: "center",
+    fontSize: 20
   }
-
 });
