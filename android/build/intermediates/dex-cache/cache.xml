@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\9e1e942168c3cde051a920ee49a156a6897aa98c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_e7188ad03daecd5e4441019924fce4f4c4e2c2b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\0b8f6015eb94d3a87cf8c8a549aa2ed6b3704e96\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_3075a6ca8eb0c30c37b95d603610635fa3ffd149.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_c7e37ee60046ad27e865cdf662be279f24e489f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\51a2b5f37f642fb06061166e6e9d8d54de3466ec\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_324067d101cf4c4dc51b3690029be268a1741007.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_d57ea21fa1381aae10327588664ee4846d61e689.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\1130e600564870ef6bbc20eae9b0048fd9798b58\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="55d7bf547c88cb7c8c7c5cdbf3b06dd66c9750f8">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_f4c9a26fc09f962233cb592a77a1a4c6fdac626e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\1859d2b61528e890023d45e609802b20045f3638\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_f9f778cb35a7c97f40f8c24384d4accb69bc4600.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_eb1fee41131a6ff5b0c51e783c828bc416a90c1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\1fa95345aaefd89313303741ae910febb7eb29fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_8286e446e04e32d77b5c8cae0a5f541618ae9b30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_3ecde7c3671b8cece723a5abe510f25bb47926b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\6b9513ff8c55ced4e87f2fcab8f5116bd8ebf99f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_1ba00de22206982ebed8ecbb66232441e1fb519f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\c8b9bb70a1b69251635114a256f9e6f6803edf86\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_4cfab55b0d9b4ba9f8968c63e906563084667e6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_e64659ec7f7d2585ef60ee5dea47ebe6c86b97da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\8b872f5bec2e7abea31a78eeaa1b2532e596dbca\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_fcbb9c835555adadf574f46b9f3945fd95c6864e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\5152731e4a88bd8cdbfb5b392114838837725b38\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_150082e326c58170e35afe040ff521221a9bc818.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\881d274b0c2f555d1b8d815cc03b01b6e87886d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_534e2068e3d7d99f84f68cbb64f62a09db57a103.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_a8a1e7e9ca4773a1a66a22e12783af92d5105f36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_b6eba05839e56536fa72d62f1726bdbf72b35899.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\f79b8d9c003593762761db3eeb9cca59a11abfd0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_b3593bbefb297cd1fc2fceac4a3ccb12ffdd498b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_40a56c853e4c99c9299620ea33fdc49de42caa95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\e7f582922e2789bf4d4ea9ae82aea671ec21fe71\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_c92426d37af436ddb1bfba9a455fd9241414dce0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\3e72397618fced8b9664b86857e81f3904fe113b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="1f6ff1728c297524e82b875ce2dfda946f4bca41">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_d779ef37a88cc35b065936b9f1c558d1f14c4804.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\64e094cdbbadf5f8b580eeba693eddf6b21f0dce\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_94ac3f46b33808502c52f9b29e7e2de205fcc323.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\645b74aac9ca9a6eb66845a803e4f5860a6ca8b5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_61a1fea078cf2669429693b22521330b60a0652b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\64e094cdbbadf5f8b580eeba693eddf6b21f0dce\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_94ac3f46b33808502c52f9b29e7e2de205fcc323.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\a33c852cf23c6d358a0056148634d9da0ed0ebf7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_ffa187b1302df68ec88b9b25331b758093216407.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\library-2.4.0_4574c7111e21055248f8b001bee762320bd194b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_40a56c853e4c99c9299620ea33fdc49de42caa95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\489e67429a68ba585be8d538e44c1f79cec4245c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_e001bf0fd9a637af0e5bf676ec82e46e40596ed9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_eb1fee41131a6ff5b0c51e783c828bc416a90c1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\51a2b5f37f642fb06061166e6e9d8d54de3466ec\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_324067d101cf4c4dc51b3690029be268a1741007.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\648dd9bbb60c9cd2eaee3314fe3df0827bca9be3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_96b41b3c8fd15d9ccac9678ce1a69ba6868b1c15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\myReactNative\node_modules\react-native-navigation\android\app\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2aa891024b42301110b281e0abd88d875e03cc70">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_fa699baf7a46fef9fdeaec713c197563db83de49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\33df057447d5060893eab71e240b39eefd262c5a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_588330a152a35ac42458cd9efd5a91950c5a1278.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_c7e37ee60046ad27e865cdf662be279f24e489f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\fe80f740c06e54333810facf3fb283cd0e8babb3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_a9a9cc500beb934a5d33fbf9e7ecf1de19df8f47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\1fa95345aaefd89313303741ae910febb7eb29fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_8286e446e04e32d77b5c8cae0a5f541618ae9b30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\8b872f5bec2e7abea31a78eeaa1b2532e596dbca\output\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_680c8bdfcfcec2f412c67b201f7babedf43832e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_b6eba05839e56536fa72d62f1726bdbf72b35899.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\caec9ff097d75d74d0dd001300a706fa8168d21d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c8ba41bea7f78f8bdf3a803b9d08eb3fff416706">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_77d7436b385f3145e028f87f6ed246f1c83cf894.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\648dd9bbb60c9cd2eaee3314fe3df0827bca9be3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_96b41b3c8fd15d9ccac9678ce1a69ba6868b1c15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\fe80f740c06e54333810facf3fb283cd0e8babb3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_a9a9cc500beb934a5d33fbf9e7ecf1de19df8f47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\9e1e942168c3cde051a920ee49a156a6897aa98c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_e7188ad03daecd5e4441019924fce4f4c4e2c2b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\0b8f6015eb94d3a87cf8c8a549aa2ed6b3704e96\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_3075a6ca8eb0c30c37b95d603610635fa3ffd149.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\881d274b0c2f555d1b8d815cc03b01b6e87886d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_534e2068e3d7d99f84f68cbb64f62a09db57a103.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_524200a27ae3e8c02ab8c37731d27cd884cba494.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\1859d2b61528e890023d45e609802b20045f3638\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_f9f778cb35a7c97f40f8c24384d4accb69bc4600.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\489e67429a68ba585be8d538e44c1f79cec4245c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6f4138a4e065826cb044d49faea4cfd7191773d1">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_e001bf0fd9a637af0e5bf676ec82e46e40596ed9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_a8a1e7e9ca4773a1a66a22e12783af92d5105f36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\e0b6ab566360df6cb76aa76864ac6f2c0948f21c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_b7fdb802e4baecf4fe64d9d609aa810f1a42732c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\645b74aac9ca9a6eb66845a803e4f5860a6ca8b5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_61a1fea078cf2669429693b22521330b60a0652b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_3ecde7c3671b8cece723a5abe510f25bb47926b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_e3795589e3eaba2d49d8ae3eb4fb2b80f945ace2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_e64659ec7f7d2585ef60ee5dea47ebe6c86b97da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\myReactNative\node_modules\react-native-vector-icons\android\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_8062430474bc34cadfa833dbc460c1830104843b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\c8b9bb70a1b69251635114a256f9e6f6803edf86\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="40392f30a601db5675cdf18192aab013d6fee6ec">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_4cfab55b0d9b4ba9f8968c63e906563084667e6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\cd36e79b970efcbcdbfcbee018a833671217424d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_0264edc0d1f5c05e3d6a4239862f0840a18d4070.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\myReactNative\node_modules\react-native-vector-icons\android\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_8062430474bc34cadfa833dbc460c1830104843b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\e7f582922e2789bf4d4ea9ae82aea671ec21fe71\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_c92426d37af436ddb1bfba9a455fd9241414dce0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\e0b6ab566360df6cb76aa76864ac6f2c0948f21c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_b7fdb802e4baecf4fe64d9d609aa810f1a42732c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\33df057447d5060893eab71e240b39eefd262c5a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f428e2fbc9ed0b297e3a3f420e51e6982f66822d">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_588330a152a35ac42458cd9efd5a91950c5a1278.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\f79b8d9c003593762761db3eeb9cca59a11abfd0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_b3593bbefb297cd1fc2fceac4a3ccb12ffdd498b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\6b9513ff8c55ced4e87f2fcab8f5116bd8ebf99f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_1ba00de22206982ebed8ecbb66232441e1fb519f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_e3795589e3eaba2d49d8ae3eb4fb2b80f945ace2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_d57ea21fa1381aae10327588664ee4846d61e689.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\a33c852cf23c6d358a0056148634d9da0ed0ebf7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_ffa187b1302df68ec88b9b25331b758093216407.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.android\build-cache\c8e5422f8173368c995a1c1db6a3eaa7dacb6076\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\classes_a56365d0c200262261b84fa0c9070de104560500.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\trang\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="C:\Users\trang\myReactNative\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_524200a27ae3e8c02ab8c37731d27cd884cba494.jar" />
+    </item>
+
+</items>

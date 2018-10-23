@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc7ac01d-5ea6-431a-b3fd-8a6e845d4736" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/action/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/places.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Summary/Summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/Summary/Summary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/places.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/places.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="myReactNative" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Summary.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/Summary/Summary.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#740#929#0" />
+                <element signature="n#!!block;n#componentWillMount#0;n#Summary#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#Summary#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/Auth/Auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1134">
+              <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configureStore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="places.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/places.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actionTypes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/action/actionTypes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="places.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/action/places.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+                <element signature="e#140#480#0" />
+                <element signature="e#518#576#0" />
+                <element signature="e#720#786#0" />
+                <element signature="e#610#639#0" />
+                <element signature="e#1090#1430#0" />
+                <element signature="e#709#715#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="31" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/action/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="36" selection-start-column="29" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="141" column="78" selection-start-line="141" selection-start-column="78" selection-end-line="141" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>react</find>
+      <find>index.android.js</find>
+      <find>placedet</find>
+      <find>reeducer</find>
+      <find>depende</find>
+      <find>android</find>
+      <find>AndroidManifest.xml</find>
+      <find>android {</find>
+      <find>MainApplication</find>
+      <find>Authscree</find>
+      <find>fontsize</find>
+      <find>buildtoo</find>
+      <find>buildToolsVersion</find>
+      <find>placeDetail</find>
+      <find>Ico</find>
+      <find>Icon</find>
+      <find>curr</find>
+      <find>VN</find>
+      <find>aler</find>
+      <find>Navigator</find>
+      <find>getplace</find>
+      <find>dependen</find>
+      <find>compileOnly</find>
+      <find>onl</find>
+      <find>implementation</find>
+      <find>MapsPackage()</find>
+      <find>new MainReactPackage()</find>
+      <find>onLoadPlaces</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\trang\myReactNative</dir>
+      <dir>C:\Users\trang\myReactNative\src</dir>
+      <dir>C:\Users\trang\myReactNative\src\screens</dir>
+      <dir>C:\Users\trang\myReactNative\android</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="connect" />
+      </map>
+    </option>
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/store/actions/places.js" />
+        <option value="$PROJECT_DIR$/src/config/FirebaseConfig.js" />
+        <option value="$PROJECT_DIR$/src/store/configureStore.js" />
+        <option value="$PROJECT_DIR$/src/screens/FindPlace/FindPlace.js" />
+        <option value="$PROJECT_DIR$/src/screens/PlaceDetail/PlaceDetail.js" />
+        <option value="$PROJECT_DIR$/src/SideDrawer/SideDrawer.js" />
+        <option value="$PROJECT_DIR$/src/components/ListItem/ListItem.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/HeadingText/HeadingText.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/src/screens/Summary/layout/TimeHeader.js" />
+        <option value="$PROJECT_DIR$/src/screens/SideDrawer/SideDrawer.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceList/PlaceList.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceInput/PlaceInput.js" />
+        <option value="$PROJECT_DIR$/src/components/AccountInput/AccountInput.js" />
+        <option value="$PROJECT_DIR$/src/components/WalletItem/WalletItem.js" />
+        <option value="$PROJECT_DIR$/src/components/PlaceList/WalletList.js" />
+        <option value="$PROJECT_DIR$/src/screens/WalletDetail/PlaceDetail.js" />
+        <option value="$PROJECT_DIR$/src/components/SpenseInput/SpenseInput.js" />
+        <option value="$PROJECT_DIR$/src/screens/Spent/Spent.js" />
+        <option value="$PROJECT_DIR$/src/components/ExppenseInput/SpenseInput.js" />
+        <option value="$PROJECT_DIR$/src/components/ExpenseInput/SpenseInput.js" />
+        <option value="$PROJECT_DIR$/src/screens/Wallet/Wallet.js" />
+        <option value="$PROJECT_DIR$/src/components/ExpenseIncomeList/ExpenseIncomeList.js" />
+        <option value="$PROJECT_DIR$/src/components/ExpenseInput/ExpenseInput.js" />
+        <option value="$PROJECT_DIR$/src/screens/Income/Income.js" />
+        <option value="$PROJECT_DIR$/src/components/IcomeInput/IncomeInput.js" />
+        <option value="$PROJECT_DIR$/src/screens/Wallet/layout/AddWallet.js" />
+        <option value="$PROJECT_DIR$/src/screens/Summary/layout/Item.js" />
+        <option value="$PROJECT_DIR$/src/screens/WalletDetail/layout/IncomeTab.js" />
+        <option value="$PROJECT_DIR$/src/screens/WalletDetail/layout/ExpenseTab.js" />
+        <option value="$PROJECT_DIR$/src/screens/WalletDetail/WalletDetail.js" />
+        <option value="$PROJECT_DIR$/src/components/ExpenseIncomeList/ExpenseIncomeItem/ExpenseIncomeItem.js" />
+        <option value="$PROJECT_DIR$/src/components/UI/DefaultInput/DefauItInput.js" />
+        <option value="$PROJECT_DIR$/src/screens/MainTabs/startMainTabs.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/src/components/WalletList/WalletItem/WalletItem.js" />
+        <option value="$PROJECT_DIR$/src/components/WalletList/WalletList.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/android/settings.gradle" />
+        <option value="$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/gradle.properties" />
+        <option value="$PROJECT_DIR$/android/app/src/main/java/com/myreactnative/MainApplication.java" />
+        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/src/action/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/action/index.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/places.js" />
+        <option value="$PROJECT_DIR$/src/screens/Summary/Summary.js" />
+        <option value="$PROJECT_DIR$/src/screens/Auth/Auth.js" />
+        <option value="$PROJECT_DIR$/src/action/places.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="width" value="857" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="Summary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myReactNative" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myReactNative" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.26137462" />
+    <property name="two.files.diff.last.used.file" value="E:/Course/React native - practical guide/10 Networking - Sending Http Requests/attached_files/147 Storing Data in Firebase/http--01-store-data/src/store/actions/places.js" />
+    <property name="two.files.diff.last.used.folder" value="$USER_HOME$/source/repos/myReactNative/src/store/actions" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\trang\myReactNative\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trang\myReactNative\src\components\WalletList" />
+      <recent name="C:\Users\trang\myReactNative\src\screens" />
+      <recent name="C:\Users\trang\myReactNative" />
+      <recent name="C:\Users\trang\myReactNative\src\components" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.npm install">
+    <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="npm install" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list>
+      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="npm.npm install" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc7ac01d-5ea6-431a-b3fd-8a6e845d4736" name="Default" comment="" />
+      <created>1534514287950</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534514287950</updated>
+      <workItem from="1534514293700" duration="2338000" />
+      <workItem from="1534517558509" duration="1217000" />
+      <workItem from="1534591258438" duration="687000" />
+      <workItem from="1536061556803" duration="293000" />
+      <workItem from="1537508136673" duration="17565000" />
+      <workItem from="1537595838659" duration="3054000" />
+      <workItem from="1537609992136" duration="2148000" />
+      <workItem from="1537613772863" duration="4101000" />
+      <workItem from="1537687022313" duration="104000" />
+      <workItem from="1537695496374" duration="6136000" />
+      <workItem from="1537749980725" duration="1861000" />
+      <workItem from="1537755499210" duration="32000" />
+      <workItem from="1538123027241" duration="1410000" />
+      <workItem from="1538188477624" duration="31000" />
+      <workItem from="1538286209462" duration="11894000" />
+      <workItem from="1538303667477" duration="539000" />
+      <workItem from="1538334272937" duration="113000" />
+      <workItem from="1538473427002" duration="17184000" />
+      <workItem from="1538549449278" duration="71000" />
+      <workItem from="1538625099014" duration="31000" />
+      <workItem from="1538683727292" duration="1811000" />
+      <workItem from="1538710120057" duration="454000" />
+      <workItem from="1538820751345" duration="14667000" />
+      <workItem from="1538895013713" duration="14964000" />
+      <workItem from="1538927338213" duration="4016000" />
+      <workItem from="1538933675299" duration="596000" />
+      <workItem from="1538994120361" duration="764000" />
+      <workItem from="1539012483377" duration="7020000" />
+      <workItem from="1539032131772" duration="7000" />
+      <workItem from="1539075904367" duration="17000" />
+      <workItem from="1539086744619" duration="3000" />
+      <workItem from="1539094322474" duration="1682000" />
+      <workItem from="1539097425675" duration="32000" />
+      <workItem from="1539158548061" duration="8829000" />
+      <workItem from="1539179256048" duration="13658000" />
+      <workItem from="1539361533684" duration="11672000" />
+      <workItem from="1539430897396" duration="14768000" />
+      <workItem from="1539492675736" duration="3328000" />
+      <workItem from="1539496348712" duration="18431000" />
+      <workItem from="1539521522531" duration="30681000" />
+      <workItem from="1539562180327" duration="1861000" />
+      <workItem from="1539692169439" duration="32000" />
+      <workItem from="1539710586056" duration="9769000" />
+      <workItem from="1539835178137" duration="41000" />
+      <workItem from="1539940246673" duration="9864000" />
+      <workItem from="1539955176749" duration="1221000" />
+      <workItem from="1540018443352" duration="8071000" />
+      <workItem from="1540053221698" duration="68000" />
+      <workItem from="1540127882762" duration="6076000" />
+    </task>
+    <task id="LOCAL-00001" summary="long day">
+      <created>1538837816749</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538837816749</updated>
+    </task>
+    <task id="LOCAL-00002" summary="start redux-thunk">
+      <created>1539159095765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539159095765</updated>
+    </task>
+    <task id="LOCAL-00003" summary="upgrade build grandle">
+      <created>1539162436152</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539162436152</updated>
+    </task>
+    <task id="LOCAL-00004" summary="checkout">
+      <created>1539162836852</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539162836852</updated>
+    </task>
+    <task id="LOCAL-00005" summary="checkout">
+      <created>1539164137200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1539164137200</updated>
+    </task>
+    <task id="LOCAL-00006" summary="@G cai firebase">
+      <created>1539167330734</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539167330734</updated>
+    </task>
+    <task id="LOCAL-00007" summary="@G fetch data not real time">
+      <created>1539185635748</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1539185635748</updated>
+    </task>
+    <task id="LOCAL-00008" summary="@G a little">
+      <created>1539197544798</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1539197544798</updated>
+    </task>
+    <task id="LOCAL-00009" summary="@G a little bit">
+      <created>1539373183072</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1539373183072</updated>
+    </task>
+    <task id="LOCAL-00010" summary="@G push cho be tri">
+      <created>1539514695797</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1539514695797</updated>
+    </task>
+    <task id="LOCAL-00011" summary="@G error blank screen">
+      <created>1539532632194</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539532632194</updated>
+    </task>
+    <task id="LOCAL-00012" summary="@G still work">
+      <created>1539548405988</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1539548405988</updated>
+    </task>
+    <task id="LOCAL-00013" summary="@G still work, still on">
+      <created>1539556350929</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1539556350929</updated>
+    </task>
+    <task id="LOCAL-00014" summary="@G still work, still on, sort date">
+      <created>1539558402210</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539558402210</updated>
+    </task>
+    <task id="LOCAL-00015" summary="switch to fuxkkkkkkkkkkkkkkkkkkkkkkk branch">
+      <created>1539710631015</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1539710631015</updated>
+    </task>
+    <task id="LOCAL-00016" summary="first commit">
+      <created>1539713555116</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1539713555116</updated>
+    </task>
+    <task id="LOCAL-00017" summary="save">
+      <created>1540019039193</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1540019039194</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="255212000" />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="0" width="857" height="775" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49621785" visible="true" weight="0.25490198" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32852563" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32829046" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3237519" />
+      <window_info id="npm" order="2" sideWeight="0.50319487" side_tool="true" weight="0.28486294" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32903227" />
+      <window_info id="Structure" order="1" sideWeight="0.50378215" side_tool="true" weight="0.16262706" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.45537066" />
+      <window_info id="Favorites" order="3" sideWeight="0.50378215" side_tool="true" weight="0.16262706" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32755905" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="long day" />
+    <MESSAGE value="start redux-thunk" />
+    <MESSAGE value="upgrade build grandle" />
+    <MESSAGE value="checkout" />
+    <MESSAGE value="@G cai firebase" />
+    <MESSAGE value="@G fetch data not real time" />
+    <MESSAGE value="@G little" />
+    <MESSAGE value="@G a little" />
+    <MESSAGE value="@G a little bit" />
+    <MESSAGE value="@G push cho be tri" />
+    <MESSAGE value="@G error blank screen" />
+    <MESSAGE value="@G still work" />
+    <MESSAGE value="@G still work, still on" />
+    <MESSAGE value="@G still work, still on, sort date" />
+    <MESSAGE value="switch to fuxkkkkkkkkkkkkkkkkkkkkkkk branch" />
+    <MESSAGE value="first commit" />
+    <MESSAGE value="save" />
+    <option name="LAST_COMMIT_MESSAGE" value="save" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/screens/SharePlace/SharePlace.js" />
+    <entry file="file://$PROJECT_DIR$/.watchmanconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/beautiful-place.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SideDrawer/SideDrawer.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/UI/HeadingText/HeadingText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/MainText/MainText.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/SideDrawer/SideDrawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlaceInput/PlaceInput.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/PickImage/PickImage.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/AccountInput/AccountInput.js" />
+    <entry file="file://$PROJECT_DIR$/src/config/FirebaseConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.android.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/background.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/screens/Spent/Spent.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/ExpenseInput/ExpenseInput.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/WalletDetail/layout/IncomeTab.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/WalletDetail/layout/ExpenseTab.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/IcomeInput/IncomeInput.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/Wallet/Wallet.js" />
+    <entry file="file://$PROJECT_DIR$/src/utility/validation.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/ExpenseIncomeList/ExpenseIncomeList.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/WalletDetail/WalletDetail.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/Summary/layout/Item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Summary/layout/TimeHeader.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ExpenseIncomeList/ExpenseIncomeItem/ExpenseIncomeItem.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/Wallet/layout/AddWallet.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/Income/Income.js" />
+    <entry file="file://$PROJECT_DIR$/src/screens/MainTabs/startMainTabs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WalletList/WalletItem/WalletItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WalletList/WalletList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-maps/lib/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/java/com/myreactnative/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/java/com/myreactnative/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/DefaultInput/DefauItInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="17" column="14" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="73" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="141" column="78" selection-start-line="141" selection-start-column="78" selection-end-line="141" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="31" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="29" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/configureStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/places.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Summary/Summary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="174" column="9" selection-start-line="174" selection-start-column="9" selection-end-line="174" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#740#929#0" />
+            <element signature="n#!!block;n#componentWillMount#0;n#Summary#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Summary#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/Auth/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/places.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <element signature="e#140#480#0" />
+            <element signature="e#518#576#0" />
+            <element signature="e#720#786#0" />
+            <element signature="e#610#639#0" />
+            <element signature="e#1090#1430#0" />
+            <element signature="e#709#715#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

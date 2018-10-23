@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\188aecae3fa6958e1c5b16f1f01318fc\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\188aecae3fa6958e1c5b16f1f01318fc\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\188aecae3fa6958e1c5b16f1f01318fc\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\bottom_navigation_small_item.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\ahbottomnavigation-2.0.6.aar\\4312faab0ef0f0377583582d96a1adb3\\res\\layout-v21\\bottom_navigation_small_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\bottom_navigation_item.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\ahbottomnavigation-2.0.6.aar\\4312faab0ef0f0377583582d96a1adb3\\res\\layout-v21\\bottom_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\188aecae3fa6958e1c5b16f1f01318fc\\res\\layout-v21\\notification_action_tombstone.xml"
+    }
+]

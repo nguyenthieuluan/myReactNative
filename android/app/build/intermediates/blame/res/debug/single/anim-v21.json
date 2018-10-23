@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\abc1601d58f3b2d635aa7c8cf45b2181\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\trang\\myReactNative\\android\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\trang\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\abc1601d58f3b2d635aa7c8cf45b2181\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    }
+]
