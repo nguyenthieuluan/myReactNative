@@ -53,18 +53,23 @@ export const setAdmin = admin => {
 
 
 // add location
-export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta) => {
+export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) => {
   return (dispatch, getState) => {
 
-    const state = store.getState().places.places.length;
+    // const state = store.getState().places.places.length;
 
-    alert(JSON.stringify(state));
+    // alert(JSON.stringify(state));
 
-    //alert()
-    //const account = setPlaces;
-    //console.log(JSON.stringify(account))
-    //firebaseApp.database().ref
-    //alert(latitude)
+//    alert(adminKey)
+
+    const newCoordinate = {  
+      latitude: latitude, 
+      longitude: longitude,
+      latitudeDelta, latitudeDelta,
+      longitudeDelta, longitudeDelta
+    };
+    firebaseApp.database().ref('users').child(adminKey).child('employees').child(userKey)
+    .update({coordinate: newCoordinate})
   }
 };
 

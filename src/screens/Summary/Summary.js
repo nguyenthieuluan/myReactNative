@@ -66,7 +66,14 @@ class Summary extends Component{
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           }
-        })
+        }),
+        this.props.setCoordinate(
+          this.state.region.latitude, 
+          this.state.region.longitude, 
+          this.state.region.latitudeDelta, 
+          this.state.region.longitudeDelta,
+          this.props.user.admin,
+          this.props.user.key);
       }, error => console.log(error),
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
 
@@ -83,7 +90,13 @@ class Summary extends Component{
     this.setState({
       isSwitchOn: true
     });
-    this.props.setCoordinate(this.state.region.latitude, this.state.region.longitude, this.state.region.latitudeDelta, this.state.region.longitudeDelta);
+    this.props.setCoordinate(
+      this.state.region.latitude, 
+      this.state.region.longitude, 
+      this.state.region.latitudeDelta, 
+      this.state.region.longitudeDelta,
+      this.props.user.admin,
+      this.props.user.key);
   };
 
   render() {
@@ -131,8 +144,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadPlaces: () => dispatch(getPlaces()),
-    setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta) =>
-     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta))
+    setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) =>
+     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);
