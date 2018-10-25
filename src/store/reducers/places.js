@@ -22,6 +22,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         admin: action.admin
       };
+    case EMPLOYEES_FETCH_SUCCESS:
+      return action.payload
     default:
       return state;
   }

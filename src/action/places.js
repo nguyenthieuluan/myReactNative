@@ -75,3 +75,15 @@ export const changeStatus = (status, adminKey, userKey) => {
     .update({status: newStatus})
   }
 };
+
+// get employees
+export const employeesFetch = () => {
+  const { currentUser } = firebaseApp.auth()
+
+  return (dispatch) => {
+    firebaseApp.database().ref(`/users/${currentUser.uid}/employees`)
+      .on('value', snapshot => {  
+        dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() })
+      })
+  }
+}

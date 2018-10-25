@@ -3,135 +3,30 @@ import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native
 import { connect } from 'react-redux';
 import {getPlaces, setCoordinate, changeStatus} from "../../action";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import EmployeeList from './EmployeeList';
 
 class Summary extends Component{
   constructor(props) {
     super(props);
-    this.props.onLoadPlaces();
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
-    this.state = {
-      isSwitchOn: false,
-      region: {
-        latitude: 10.787927,
-        longitude: 106.6136637,
-        latitudeDelta: 0.015,
-        longitudeDelta: 0.0121,
-      },
-      marker: {
-        latitude: 10.787927,
-        longitude: 106.6136637,
-      }
-    }
-  }
-  onNavigatorEvent = event => {
-    if (event.type === "NavBarButtonPress") {
-      if (event.id === "sideDrawerToggle") {
-        this.props.navigator.toggleDrawer({
-          side: "left"
-        });
-      }
-    }
   };
 
   componentWillMount() {
-    navigator.geolocation.getCurrentPosition(r =>{
-      this.setState({
-        region: {
-          latitude: r.coords.latitude,
-          longitude: r.coords.longitude,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
-        },
-        marker: {
-          latitude: r.coords.latitude,
-          longitude: r.coords.longitude,
-        }
-      })
-    }, error => console.log(error),
-    {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
-    this.props.setCoordinate(
-      this.state.region.latitude, 
-      this.state.region.longitude, 
-      this.state.region.latitudeDelta, 
-      this.state.region.longitudeDelta,
-      this.props.user.admin,
-      this.props.user.key);
   };
 
   componentDidMount() {
-    const { coordinate } = this.state;
-    this.watchID = navigator.geolocation.watchPosition(
-      position => {
-        this.setState({
-          region: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.0121,
-          },
-          marker: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          }
-        }),
-        this.props.setCoordinate(
-          this.state.region.latitude, 
-          this.state.region.longitude, 
-          this.state.region.latitudeDelta, 
-          this.state.region.longitudeDelta,
-          this.props.user.admin,
-          this.props.user.key);
-      }, error => console.log(error),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
-
   }
-  
-
-  activeHandler = () => {
-    this.setState({
-        isSwitchOn: false
-      });
-    this.props.changeStatus('offline', this.props.user.admin, this.props.user.key);
-  };
-
-  offlineHandler = () => {
-    this.setState({
-      isSwitchOn: true
-    });
-    this.props.changeStatus('active', this.props.user.admin, this.props.user.key);
-  };
-
+  itemSelectedHandler() {
+    alert('selected')
+  }
   render() {
-    let active = null;
-    let offline = null;
-    if (this.state.isSwitchOn) {
-      active = (<TouchableOpacity style={styles.active} onPress={this.activeHandler}>
-        <Text>Active</Text>
-      </TouchableOpacity>);
-      offline = null;
-    } else {
-      offline = (<TouchableOpacity style={styles.offline} onPress={this.offlineHandler}>
-        <Text>Off</Text>
-      </TouchableOpacity>);
-      active = null;
-    }
     return (
-      <View style={styles.container}>
-      <ScrollView style={{flex: 1}}>
-        <Text style={styles.textWelcome}>Hi {this.props.user.userName} !</Text>
-        {/* <Text style={styles.textWelcome}> Your boss: {this.props.user.admin} </Text> */}
-        <View style={styles.content}>
-          {active}
-          {offline}
-        </View>
-        <MapView
-          provider={PROVIDER_GOOGLE}
-          style={styles.mapView}
-          region={this.state.region}
-        >
-          <MapView.Marker coordinate={this.state.marker}/>
-        </MapView>
-      </ScrollView>
+      <View>
+        <Text>Hi {this.props.user.email}!</Text>
+        <Text>This is your employees</Text>
+        <EmployeeList
+          employees = {this.props.employees}
+          onItemSelected={this.itemSelectedHandler}
+        />
       </View>
     )
   }
@@ -140,7 +35,8 @@ class Summary extends Component{
 const mapStateToProps = state => {
   return {
     account: state.places.places,
-    user: state.places.user
+    user: state.auth.user,
+    employees: state.places.employees
   };
 };
 const mapDispatchToProps = dispatch => {
@@ -148,7 +44,8 @@ const mapDispatchToProps = dispatch => {
     onLoadPlaces: () => dispatch(getPlaces()),
     setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) =>
      dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey)),
-    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey))  
+    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey)),
+    onLoadEmployee 
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);

@@ -4,7 +4,7 @@ import startMainTabs from '../MainTabs/startMainTabs';
 import DefaultInput from '../../components/UI/DefaultInput/DefauItInput';
 import backgroundImage from '../../assets/background.jpg';
 import {firebaseApp} from "../../config/FirebaseConfig";
-import {getPlaces, getUser, setUser} from "../../action";
+import {getPlaces, getUser, loginUser} from "../../action";
 import { connect } from 'react-redux';
 
 class AuthScreen extends Component {
@@ -18,44 +18,12 @@ class AuthScreen extends Component {
   }
   loadUser () {
     //alert(JSON.stringify(this.props.account))
-    let userList = [];
-    for (const [key, value] of Object.entries(this.props.account)) {
-      for(const [key1, value1] of Object.entries(value)) {
-        //alert(JSON.stringify(value1))
-        if(key1 === 'employees' && value1 !== null) {
-          let valueTemp = [];
-          if (typeof value1 === 'object') {
-            valueTemp = value1;
-          }
-          for(const [key2, value2] of Object.entries(valueTemp)) {
-            userList.push({
-              key: key2,
-              userName: value2.name,
-              email: value2.phone,
-              password: value2.shift,
-              admin: value.key
-            })
-          }
-        }
-      }
-    }
-    return userList;
   };
   loginHandler = () => {
     if (this.state.email === "" || this.state.password === "")
       return false;
-    let x = this.loadUser().filter(l => l.email === this.state.email);
-    if(x.length > 0 && x[0].password === this.state.password) {
-      this.props.getUser(x[0]);
-
-      // this.setState({
-      //
-      // })
-      //alert(JSON.stringify(x[0]));
-      startMainTabs();
-    } else {
-      alert('wrong email or password!');
-    }
+    this.props.loginUser(this.state.email, this.state.password)
+    //alert(this.state.email + this.state.password)
   };
 
   render() {
@@ -132,7 +100,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onLoadPlaces: () => dispatch(getPlaces()),
-    getUser: (user) => dispatch(getUser(user))
+    getUser: (user) => dispatch(getUser(user)),
+    loginUser: (email, password) => dispatch(loginUser(email, password))
   };
 };
 

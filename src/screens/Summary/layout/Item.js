@@ -3,9 +3,15 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Item = props => (
-  <View>
-
+  <TouchableOpacity onPress={props.onItemPressed}>
+  <View style={styles.listItemContainer}>
+    <Icon name="md-bookmarks" style={styles.walletIcon} size={40} color="#01a699" />
+    <View style={styles.listItem}>
+      <Text style={styles.nameWallet}>{props.nameEmployee}</Text>
+      <Text style={styles.balanceWallet}>{props.statusEmployee}</Text>
+    </View>
   </View>
+</TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
