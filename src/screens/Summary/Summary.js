@@ -5,8 +5,9 @@ import {getPlaces, setCoordinate, changeStatus} from "../../action";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Summary extends Component{
-  constructor(props) {
+  constructor(props, ) {
     super(props);
+    
     this.props.onLoadPlaces();
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.state = {
@@ -32,7 +33,7 @@ class Summary extends Component{
       }
     }
   };
-
+//0918680679a
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(r =>{
       alert('will mount')
@@ -51,9 +52,9 @@ class Summary extends Component{
     }, error => console.log(error),
     {enableHighAccuracy: true, timeout: 20000, maximumAge: 10000});
     this.props.setCoordinate(
-      this.state.region.latitude, 
-      this.state.region.longitude, 
-      this.state.region.latitudeDelta, 
+      this.state.region.latitude,
+      this.state.region.longitude,
+      this.state.region.latitudeDelta,
       this.state.region.longitudeDelta,
       this.props.user.admin,
       this.props.user.key);
