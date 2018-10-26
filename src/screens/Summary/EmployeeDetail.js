@@ -3,6 +3,7 @@ import {View, Button, StyleSheet, TouchableOpacity, Image, Text, TextInput} from
 import Icon  from "react-native-vector-icons/Ionicons";
 import {connect} from 'react-redux';
 import { deletePlace } from '../../action/index';
+import MapView from 'react-native-maps';
 
 class EmployeeDetail extends Component {
   onItemDeleted = () => {
@@ -46,6 +47,17 @@ class EmployeeDetail extends Component {
             </TouchableOpacity>
           </View>
         </View>
+
+        <MapView style={styles.mapView}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+
+
       </View>
     );
   }
@@ -112,7 +124,7 @@ const styles = StyleSheet.create({
     borderRadius:100,
   },
   placeButton: {
-    borderWidth: 3,
+    borderWidth: 1,
     borderColor: "#7f71ee",
     width: 120,
     borderRadius: 8,
@@ -121,5 +133,9 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 20,
     color: "#190dc9"
+  },
+  mapView: {
+    width: "100%",
+    height: 500
   }
 });
