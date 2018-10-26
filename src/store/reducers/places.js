@@ -1,4 +1,4 @@
-import {SET_ADMIN, SET_PLACE, SET_USER} from '../../action/actionTypes';
+import { SET_ADMIN, SET_PLACE, SET_USER } from '../../action/actionTypes';
 
 const initialState = {
   places: [],
@@ -22,8 +22,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         admin: action.admin
       };
-    case EMPLOYEES_FETCH_SUCCESS:
-      return action.payload
     default:
       return state;
   }

@@ -1,4 +1,11 @@
-import {SET_ADMIN, SET_PLACE, SET_USER} from "./actionTypes";
+import {
+  EMPLOYEE_SAVE_SUCCEESS,
+  EMPLOYEES_FETCH_SUCCESS,
+  SET_ADMIN,
+  SET_EMPLOYEES,
+  SET_PLACE,
+  SET_USER
+} from "./actionTypes";
 import {firebaseApp} from "../config/FirebaseConfig";
 import configureStore from "../store/configureStore";
 const store = configureStore();
@@ -58,8 +65,8 @@ export const setCoordinate = (latitude, longitude, latitudeDelta, longitudeDelta
     const newCoordinate = {  
       latitude: latitude, 
       longitude: longitude,
-      latitudeDelta, latitudeDelta,
-      longitudeDelta, longitudeDelta
+      latitudeDelta: latitudeDelta,
+      longitudeDelta: longitudeDelta
     };
     firebaseApp.database().ref('users').child(adminKey).child('employees').child(userKey)
     .update({coordinate: newCoordinate})
@@ -76,14 +83,76 @@ export const changeStatus = (status, adminKey, userKey) => {
   }
 };
 
+
+
 // get employees
-export const employeesFetch = () => {
+export const getEmployees = () => {
   const { currentUser } = firebaseApp.auth()
 
   return (dispatch) => {
     firebaseApp.database().ref(`/users/${currentUser.uid}/employees`)
-      .on('value', snapshot => {  
-        dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() })
+      .on('value', childSnappshot => {
+        const employees = [];
+        childSnappshot.forEach(doc=>{
+          employees.push({
+            key: doc.key,
+            name: doc.toJSON().name,
+            email: doc.toJSON().phone,
+            password: doc.toJSON().shift,
+            status: doc.toJSON().status,
+            coordinate: doc.toJSON().coordinate
+          })
+        });
+        dispatch(setEmployees(employees));
+      }, function (error) { })
+  }
+};
+export const setEmployees = employees => {
+  return {
+    type: SET_EMPLOYEES,
+    employees: employees
+  }
+};
+
+
+
+// create employee
+export const employeeCreate = ({ name, phone, shift }) => {
+  const { currentUser } = firebase.auth()
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/employees`)
+      .push({ name, phone, shift })
+      // .then(() => {
+      //   dispatch({
+      //     type: EMPLOYEE_CREATE 
+      //   })
+      // })
+  }
+};
+
+// update employee
+export const employeeSave = ({ name, phone, shift, uid }) => {
+  const { currentUser } = firebase.auth()
+
+  return (dispatch) => {
+    firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+      .set({ name, phone, shift })
+      .then(() => {
+        dispatch({ type: EMPLOYEE_SAVE_SUCCEESS })
+        Actions.pop()
       })
   }
-}
+};
+
+// delete employee
+export const employeeDelete = ({ uid }) => {
+  const { currentUser } = firebase.auth()
+
+  return () => {
+    firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+      .remove()
+      .then(() => {
+        Actions.pop()
+      })
+  }
+};

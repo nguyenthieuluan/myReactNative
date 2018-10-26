@@ -1,7 +1,7 @@
 import {SET_ADMIN, SET_PLACE, SET_USER} from "./actionTypes";
 import {firebaseApp} from "../config/FirebaseConfig";
 import { 
-    EMAIL_CHANGED, 
+    EMAIL_CHANGED,
     PASSWORD_CHANGED,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL,

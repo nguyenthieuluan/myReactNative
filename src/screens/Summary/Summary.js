@@ -1,32 +1,59 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
+import {Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
-import {getPlaces, setCoordinate, changeStatus} from "../../action";
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-import EmployeeList from './EmployeeList';
+import {getEmployees} from "../../action";
+import EmployeeList from './layout/EmployeeList';
+import Icon from "react-native-vector-icons/Ionicons";
 
 class Summary extends Component{
   constructor(props) {
     super(props);
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
+    this.props.onLoadEmployee();
+  };
+  onNavigatorEvent = event => {
+    if (event.type === "NavBarButtonPress") {
+      if (event.id === "sideDrawerToggle") {
+        this.props.navigator.toggleDrawer({
+          side: "left"
+        });
+      }
+    }
   };
 
-  componentWillMount() {
+  itemSelectedHandler = key => {
+    const selEmployee = this.props.employees.find( x => {
+      return x.key === key
+    });
+    this.props.navigator.push({
+      screen: "awesome-places.EmployeeDetail",
+      title: selEmployee.name,
+      passProps: {
+        selectedEmployee: selEmployee
+      }
+    })
   };
 
-  componentDidMount() {
-  }
-  itemSelectedHandler() {
-    alert('selected')
-  }
+  // Add wallet handler
+  onAddWalletHandler = () => {
+    this.props.navigator.push({
+      screen: "awesome-places.AddEmployee",
+      title: 'Add Employee',
+      passProps: {}
+    })
+  };
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Hi {this.props.user.email}!</Text>
         <Text>This is your employees</Text>
-        <EmployeeList
-          employees = {this.props.employees}
-          onItemSelected={this.itemSelectedHandler}
+         <EmployeeList
+           employees = {this.props.employees}
+           onItemSelected={this.itemSelectedHandler}
         />
+        <TouchableOpacity style={styles.addButton} onPress={this.onAddWalletHandler}>
+          <Icon name="ios-add" style={styles.addButtonIcon} size={30} color="#01a699" />
+        </TouchableOpacity>
       </View>
     )
   }
@@ -34,58 +61,36 @@ class Summary extends Component{
 
 const mapStateToProps = state => {
   return {
+    user: state.auth.user, // user login
     account: state.places.places,
-    user: state.auth.user,
-    employees: state.places.employees
+    employees: state.employees.employees
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
-    onLoadPlaces: () => dispatch(getPlaces()),
-    setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) =>
-     dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey)),
-    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey)),
-    onLoadEmployee 
+    onLoadEmployee: () => dispatch(getEmployees()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#C4C5C0",
     width: "100%",
     height: "100%"
   },
-  content: {
-    paddingTop: 20,
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  addButtonIcon: {
+    color: "white"
   },
-  active: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 20,
-    width: 200,
-    height: 50,
-    backgroundColor: "blue"
-  },
-  offline:{
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 20,
-    width: 200,
-    height: 50,
-    backgroundColor: "grey"
-  },
-  mapView: {
-    margin: 5,
-    borderWidth: 1,
-    width: "100%",
-    height: 400
-  },
-  textWelcome: {
-    textAlign: "center",
-    fontSize: 20
+  addButton: {
+    alignItems:'center',
+    justifyContent:'center',
+    width: 40,
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    height: 40,
+    backgroundColor:'#F75E5E',
+    borderRadius:100,
   }
 });

@@ -1,6 +1,8 @@
 export const SET_PLACE = 'SET_PLACE';
 export const SET_USER = 'SET_USER';
 export const SET_ADMIN = 'SET_ADMIN';
+export const SET_EMPLOYEES = 'SET_EMPLOYEES';
+
 
 
 export const EMAIL_CHANGED = 'email_changed'
