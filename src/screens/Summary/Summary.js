@@ -36,7 +36,6 @@ class Summary extends Component{
 //0918680679a
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(r =>{
-      alert('will mount')
       this.setState({
         region: {
           latitude: r.coords.latitude,
@@ -100,7 +99,7 @@ class Summary extends Component{
     this.setState({
       isSwitchOn: true
     });
-    alert(JSON.stringify(this.state.region))
+    //alert(JSON.stringify(this.state.region))
     this.props.changeStatus('active', this.props.user.admin, this.props.user.key);
   };
 
