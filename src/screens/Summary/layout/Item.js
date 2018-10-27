@@ -1,21 +1,28 @@
 import React, {Component} from "react";
-import { View, Text, StyleSheet, TouchableOpacity, TouchableHighlight } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, TouchableHighlight, Dimensions  } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
 class Item extends Component {
   render() {
-    let status = '';
+    let status = null;
     if (this.props.statusEmployee === 'active') {
       status = (
-        <TouchableHighlight style={styles.circle}>
-          <Text>haasdf</Text>
-        </TouchableHighlight>
+        <TouchableOpacity style={styles.circle}>
+          <Text style={{}}> </Text>
+        </TouchableOpacity>
       )
+    }
+    let icon = (<Icon name="ios-person" style={styles.walletIcon} size={40} color="#01a699" />);
+    if (this.props.nameEmployee.search('ti') !== -1 || this.props.nameEmployee.search('tri') !== -1 && this.props.nameEmployee.search('titri') === -1) {
+      icon = <Icon name="md-woman" style={styles.walletIcon} size={40} color="#01a699" />
+    }
+    if (this.props.nameEmployee.search('titri') !== -1) {
+      icon = <Icon name="md-heart" style={styles.walletIcon} size={40} color="#01a699" />
     }
     return (
       <TouchableOpacity onPress={this.props.onItemPressed}>
       <View style={styles.listItemContainer}>
-        <Icon name="md-bookmarks" style={styles.walletIcon} size={40} color="#01a699" />
+        {icon}
         <View style={styles.listItem}>
           <Text style={styles.nameWallet}>{this.props.nameEmployee}</Text>
           {status}
@@ -31,18 +38,23 @@ export default Item;
 const styles = StyleSheet.create({
   listItemContainer: {
     flexDirection: "row",
-    width: "100%",
+    width: Dimensions.get('window').width,
     marginBottom: 5,
     padding: 10,
-    backgroundColor: "#eee",
-    alignItems: "center"
+    backgroundColor: "#ffffff",
+    alignItems: "center",
+    borderRadius: 5,
+    justifyContent: 'center',
+    marginLeft: 5
   },
   listItem: {
     flex: 1,
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "center"
   },
   nameWallet: {
-    width: "100%"
+    width: "90%",
+    //marginLeft: 10
   },
   balanceWallet: {
     width: "100%"
@@ -51,12 +63,11 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   circle: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    color: "#93E825"
+    width: 16,
+    height: 16,
+    borderRadius: 8,
+    backgroundColor: "#40ff02",
   }
-
 });
 
 

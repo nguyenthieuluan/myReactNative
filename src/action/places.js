@@ -117,11 +117,17 @@ export const setEmployees = employees => {
 
 
 // create employee
-export const employeeCreate = ({ name, phone, shift }) => {
-  const { currentUser } = firebase.auth()
+export const employeeCreate = (name, email, password) => {
+  const { currentUser } = firebaseApp.auth();
+  const employee = {
+    coordinate: '',
+    name: name,
+    phone: email,
+    shift: password,
+    status: 'offline'
+  };
   return (dispatch) => {
-    firebase.database().ref(`/users/${currentUser.uid}/employees`)
-      .push({ name, phone, shift })
+    firebaseApp.database().ref(`/users/${currentUser.uid}/employees`).push(employee)
       // .then(() => {
       //   dispatch({
       //     type: EMPLOYEE_CREATE 
@@ -145,14 +151,11 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
 };
 
 // delete employee
-export const employeeDelete = ({ uid }) => {
-  const { currentUser } = firebase.auth()
+export const employeeDelete = ( key ) => {
+  const { currentUser } = firebaseApp.auth();
 
   return () => {
-    firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+    firebaseApp.database().ref(`/users/${currentUser.uid}/employees/${key}`)
       .remove()
-      .then(() => {
-        Actions.pop()
-      })
   }
 };

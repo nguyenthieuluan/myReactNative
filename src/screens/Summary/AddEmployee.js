@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, StyleSheet, Text, TextInput, TouchableOpacity, View} from "react-native";
 import { connect } from 'react-redux';
+import {employeeCreate} from "../../action";
 
 class AddEmployee extends Component{
   constructor(props) {
@@ -40,14 +41,14 @@ class AddEmployee extends Component{
 
   // add handler
   addEmployeeHandler = () => {
-    //if (this.state.name === '' || this.state.email === '' || this.state.password === '') return;
-    alert(this.state.name + this.state.email + this.state.password);
-    //this.props.navigator.pop();
-    //this.props.onAddPlace(placeName, initialAccountBalance, note)
+    if (this.state.name === '' || this.state.email === '' || this.state.password === '') return;
+    //alert(this.state.name + this.state.email + this.state.password);
+    this.props.employeeCreate(this.state.name, this.state.email, this.state.password)
+    this.props.navigator.pop();
   };
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.uiBlock}>
         <View style={styles.inputContainer}>
 
           <TextInput
@@ -80,8 +81,7 @@ class AddEmployee extends Component{
 
 const mapDispatchToProps = dispatch => {
   return {
-
-    //onAddPlace: (placeName, initialAccountBalance, note) => dispatch(addPlace(placeName, initialAccountBalance, note))
+    employeeCreate: (name, email, password) => dispatch(employeeCreate(name, email, password))
   };
 };
 
@@ -108,5 +108,11 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 20,
     color: "#190dc9"
-  }
+  },
+  uiBlock: {
+    backgroundColor: "white",
+    margin: 5,
+    padding: 10,
+    borderRadius: 5
+  },
 });

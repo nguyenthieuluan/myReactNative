@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {View, StyleSheet, TouchableOpacity, Text, TextInput, Dimensions, TouchableHighlight} from "react-native";
 import Icon  from "react-native-vector-icons/Ionicons";
 import {connect} from 'react-redux';
-import { deletePlace } from '../../action/index';
+import { employeeDelete } from '../../action/index';
 import MapView from 'react-native-maps';
 
 class EmployeeDetail extends Component {
@@ -38,40 +38,46 @@ class EmployeeDetail extends Component {
 //    this.props.navigator.pop();
   };
   deleteEmployeeHandler = () => {
-    //this.props.onDeletePlace(this.props.selectedEmployee.key);
-    alert(this.props.selectedEmployee.key);
-    //this.props.navigator.pop();
+    this.props.employeeDelete(this.props.selectedEmployee.key);
+    //alert(this.props.selectedEmployee.key);
+    this.props.navigator.pop();
   };
 
   // did mount
   componentDidMount() {
-    
-    const { coordinate } = JSON.stringify(this.props.selectedEmployee.coordinate);
-    const latitude = this.props.selectedEmployee.coordinate.latitude;
-    const longitude = this.props.selectedEmployee.coordinate.longitude;
-    
-    //alert(latitude)
-    //const latitude = this.props.selectedEmployee.coordinate.latitude;
-    //alert( coordinate )
-    //alert( JSON.stringify(coordinate));
-    //alert( JSON.stringify(this.props.selectedEmployee.coordinate));
-    
-    if (coordinate.longitude === '' || coordinate.longitude === '') return;
-    this.setState({
-      region: {
-        latitude: coordinate.latitude,
-        longitude: coordinate.longitude,
-        latitudeDelta: 0.015,
-        longitudeDelta: 0.0121,
-      },
-      marker: {
-        latitude: coordinate.latitude,
-        longitude: coordinate.longitude,
-      }
-    })
+    if(this.props.selectedEmployee.coordinate) {
+      const latitude = this.props.selectedEmployee.coordinate.latitude;
+      const longitude = this.props.selectedEmployee.coordinate.longitude;
+
+      if (latitude === '' || longitude === '') return;
+      this.setState({
+        region: {
+          latitude: latitude,
+          longitude: longitude,
+          latitudeDelta: 0.015,
+          longitudeDelta: 0.0121,
+        },
+        marker: {
+          latitude: latitude,
+          longitude: longitude,
+        }
+      })
+    }
   }
 
   render() {
+    let maps = (<View style={styles.uiBlock}>
+      <Text>This user offline right now!</Text>
+    </View>);
+    if (this.props.selectedEmployee.status === 'active') {
+      maps = (
+        <MapView style={styles.mapView}
+                 region={this.state.region}
+        >
+          <MapView.Marker coordinate={this.state.marker}/>
+        </MapView>
+      )
+    }
     return (
       <View style={styles.container}>
         <View style={styles.uiBlock}>
@@ -97,14 +103,7 @@ class EmployeeDetail extends Component {
             </TouchableOpacity>
           </View>
         </View>
-
-        <MapView style={styles.mapView}
-                 region={this.state.region}
-        >
-          <MapView.Marker coordinate={this.state.marker}/>
-        </MapView>
-
-
+        {maps}
       </View>
     );
   }
@@ -112,7 +111,7 @@ class EmployeeDetail extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeletePlace: (key) => dispatch(deletePlace(key))
+    employeeDelete: (key) => dispatch(employeeDelete(key))
   }
 };
 
