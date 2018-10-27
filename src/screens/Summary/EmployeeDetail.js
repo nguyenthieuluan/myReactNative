@@ -1,15 +1,26 @@
 import React, {Component} from "react";
-import {View, Button, StyleSheet, TouchableOpacity, Image, Text, TextInput} from "react-native";
+import {View, StyleSheet, TouchableOpacity, Text, TextInput, Dimensions, TouchableHighlight} from "react-native";
 import Icon  from "react-native-vector-icons/Ionicons";
 import {connect} from 'react-redux';
 import { deletePlace } from '../../action/index';
+import MapView from 'react-native-maps';
 
 class EmployeeDetail extends Component {
-  onItemDeleted = () => {
-    this.props.onDeletePlace(this.props.selectedPlace.key);
-    //alert(this.props.selectedPlace.key);
-    this.props.navigator.pop();
+  state = {
+    isSwitchOn: false,
+    region: {
+      latitude: 10.787927,
+      longitude: 106.6136637,
+      latitudeDelta: 0.015,
+      longitudeDelta: 0.0121,
+    },
+    marker: {
+      latitude: 10.787927,
+      longitude: 106.6136637,
+    }
   };
+
+  //get value
   nameChangedHandler = val => {
     this.setState({
       name: val
@@ -20,6 +31,46 @@ class EmployeeDetail extends Component {
       password: val
     });
   };
+
+// handler
+  saveEmployeeHandler = () => {
+    alert(JSON.stringify(this.props.selectedEmployee.coordinate.latitude))
+//    this.props.navigator.pop();
+  };
+  deleteEmployeeHandler = () => {
+    //this.props.onDeletePlace(this.props.selectedEmployee.key);
+    alert(this.props.selectedEmployee.key);
+    //this.props.navigator.pop();
+  };
+
+  // did mount
+  componentDidMount() {
+    
+    const { coordinate } = JSON.stringify(this.props.selectedEmployee.coordinate);
+    const latitude = this.props.selectedEmployee.coordinate.latitude;
+    const longitude = this.props.selectedEmployee.coordinate.longitude;
+    
+    //alert(latitude)
+    //const latitude = this.props.selectedEmployee.coordinate.latitude;
+    //alert( coordinate )
+    //alert( JSON.stringify(coordinate));
+    //alert( JSON.stringify(this.props.selectedEmployee.coordinate));
+    
+    if (coordinate.longitude === '' || coordinate.longitude === '') return;
+    this.setState({
+      region: {
+        latitude: coordinate.latitude,
+        longitude: coordinate.longitude,
+        latitudeDelta: 0.015,
+        longitudeDelta: 0.0121,
+      },
+      marker: {
+        latitude: coordinate.latitude,
+        longitude: coordinate.longitude,
+      }
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -36,16 +87,24 @@ class EmployeeDetail extends Component {
                      value={this.props.selectedEmployee.password}
                      onChangeText={this.passwordChangedHandler}/>
           <View style={styles.buttonHandler}>
-            <TouchableOpacity onPress={this.addEmployeeHandler}
+            <TouchableOpacity onPress={this.saveEmployeeHandler}
                               style={styles.placeButton}>
               <Text style={styles.textButton}>Save</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.addEmployeeHandler}
+            <TouchableOpacity onPress={this.deleteEmployeeHandler}
                               style={styles.placeButton}>
               <Text style={styles.textButton}>Delete</Text>
             </TouchableOpacity>
           </View>
         </View>
+
+        <MapView style={styles.mapView}
+                 region={this.state.region}
+        >
+          <MapView.Marker coordinate={this.state.marker}/>
+        </MapView>
+
+
       </View>
     );
   }
@@ -112,7 +171,7 @@ const styles = StyleSheet.create({
     borderRadius:100,
   },
   placeButton: {
-    borderWidth: 3,
+    borderWidth: 1,
     borderColor: "#7f71ee",
     width: 120,
     borderRadius: 8,
@@ -121,5 +180,9 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 20,
     color: "#190dc9"
+  },
+  mapView: {
+    width: "100%",
+    height: 500
   }
 });

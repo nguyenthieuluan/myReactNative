@@ -11,6 +11,7 @@ class Summary extends Component{
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.props.onLoadEmployee();
   };
+  // side drawer
   onNavigatorEvent = event => {
     if (event.type === "NavBarButtonPress") {
       if (event.id === "sideDrawerToggle") {
@@ -21,6 +22,7 @@ class Summary extends Component{
     }
   };
 
+  // item selected Handler
   itemSelectedHandler = key => {
     const selEmployee = this.props.employees.find( x => {
       return x.key === key
@@ -34,7 +36,7 @@ class Summary extends Component{
     })
   };
 
-  // Add wallet handler
+  // Add Employee handler
   onAddWalletHandler = () => {
     this.props.navigator.push({
       screen: "awesome-places.AddEmployee",
@@ -42,6 +44,7 @@ class Summary extends Component{
       passProps: {}
     })
   };
+  // render
   render() {
     return (
       <View style={styles.container}>
