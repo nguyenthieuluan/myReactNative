@@ -12,16 +12,16 @@ class AuthScreen extends Component {
     super(props);
     this.props.onLoadPlaces();
     this.state = {
-      email: "",
-      password: "",
+      email: "detai11@gmail.com",
+      password: "123321",
     }
   }
   loadUser () {
     //alert(JSON.stringify(this.props.account))
   };
   loginHandler = () => {
-    if (this.state.email === "" || this.state.password === "")
-      return false;
+    // if (this.state.email === "" || this.state.password === "")
+    //   return false;
     this.props.loginUser(this.state.email, this.state.password)
     //alert(this.state.email + this.state.password)
   };
