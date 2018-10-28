@@ -3,7 +3,7 @@ import { SET_ADMIN, SET_PLACE, SET_USER } from '../../action/actionTypes';
 const initialState = {
   places: [],
   user: [],
-  admin: []
+  admin: 0
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -19,7 +19,6 @@ const reducer = (state = initialState, action) => {
       };
     case SET_ADMIN:
       return {
-        ...state,
         admin: action.admin
       };
     default:

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
-import {getEmployees} from "../../action";
+import {getEmployees, getAdmin} from "../../action";
 import EmployeeList from './layout/EmployeeList';
 import Icon from "react-native-vector-icons/Ionicons";
 //import { Observable } from 'rxjs/Observable';
@@ -11,6 +11,7 @@ class Summary extends Component{
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.props.onLoadEmployee();
+    this.props.getAdmin();
     this.state = {
       //selEmployee: Observable.selectedEmployee
     }
@@ -58,8 +59,7 @@ class Summary extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hi {this.props.user.email}!</Text>
-        <Text>This is your employees</Text>
+        <Text style={styles.textTotal}>Total Employees: {this.props.employeeCount} </Text>
          <EmployeeList
            employees = {this.props.employees}
            onItemSelected={this.itemSelectedHandler}
@@ -76,12 +76,14 @@ const mapStateToProps = state => {
   return {
     user: state.auth.user, // user login
     account: state.places.places,
-    employees: state.employees.employees
+    employees: state.employees.employees,
+    employeeCount: state.places.admin
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     onLoadEmployee: () => dispatch(getEmployees()),
+    getAdmin: () => dispatch(getAdmin())
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);
@@ -105,5 +107,12 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor:'#F75E5E',
     borderRadius:100,
+  }, 
+  textTotal: {
+    backgroundColor: "white",
+    fontSize: 30,
+    margin: 5,
+    marginBottom: 5,
+    padding: 5
   }
 });

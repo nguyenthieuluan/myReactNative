@@ -35,7 +35,7 @@ class EmployeeDetail extends Component {
 
 // handler
   saveEmployeeHandler = () => {
-    alert(JSON.stringify(this.props.selectedEmployee.coordinate.latitude))
+    //alert(JSON.stringify(this.props.selectedEmployee.coordinate.latitude))
 //    this.props.navigator.pop();
   };
   deleteEmployeeHandler = () => {
@@ -77,9 +77,9 @@ class EmployeeDetail extends Component {
     active = this.props.employees.find(x => x.key === this.props.selectedEmployee.key);
     
     let maps = (<View style={styles.uiBlock}>
-      <Text>This user offline right now!</Text>
+      <Text style={{fontSize: 30}}>This user offline right now!</Text>
     </View>);
-    if (active.status === 'active') {
+    if ( active && active.status === 'active') {
       maps = (
         <MapView style={styles.mapView}
                  region={active.coordinate}
@@ -91,7 +91,7 @@ class EmployeeDetail extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.uiBlock}>
-          <Text>{active.email}</Text>
+          <Text>{this.props.selectedEmployee.email}</Text>
           <TextInput placeholder='Name'
                      placeholderTextColor={'#d3d3d3'}
                      autoCorrect={false}

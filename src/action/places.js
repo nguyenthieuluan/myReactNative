@@ -47,11 +47,15 @@ export const setUser = user => {
 
 // get manager
 export const getAdmin = () => {
+  const { currentUser } = firebaseApp.auth()
   return dispatch => {
-    dispatch(setAdmin(admin));
+    firebaseApp.database().ref(`/users/${currentUser.uid}`).child('employeeCount').on('value', snappshot => {
+      dispatch(setAdmin( snappshot.val() ));
+    })
 }
 };
 export const setAdmin = admin => {
+  //alert(admin)
   return {
     type: SET_ADMIN,
     admin: admin
@@ -104,7 +108,16 @@ export const getEmployees = () => {
           })
         });
         dispatch(setEmployees(employees));
-      }, function (error) { })
+      }, function (error) { });
+
+      
+      
+      // .set({
+      //   count: employeeCount
+      // })
+      //   //alert(JSON.stringify(admin));
+        //dispatch(setEmployees(employees)); 
+      
   }
 };
 export const setEmployees = employees => {
