@@ -7,6 +7,7 @@ import MapView from 'react-native-maps';
 
 class EmployeeDetail extends Component {
   state = {
+    activeEmployee: this.props.selectedEmployee,
     isSwitchOn: false,
     region: {
       latitude: 10.787927,
@@ -43,45 +44,54 @@ class EmployeeDetail extends Component {
     this.props.navigator.pop();
   };
 
+  // will mount 
+  componentWillMount() {
+    
+  }
+
   // did mount
   componentDidMount() {
-    if(this.props.selectedEmployee.coordinate) {
-      const latitude = this.props.selectedEmployee.coordinate.latitude;
-      const longitude = this.props.selectedEmployee.coordinate.longitude;
+    // if(this.state.activeEmployee.coordinate) {
+    //   const active = this.props.employees.find(x => x.key === this.props.selectedEmployee.key);
+    //   const latitude = active.coordinate.latitude;
+    //   const longitude = active.coordinate.longitude;
 
-      if (latitude === '' || longitude === '') return;
-      this.setState({
-        region: {
-          latitude: latitude,
-          longitude: longitude,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
-        },
-        marker: {
-          latitude: latitude,
-          longitude: longitude,
-        }
-      })
-    }
+    //   if (latitude === '' || longitude === '') return;
+    //   this.setState({
+    //     region: {
+    //       latitude: latitude,
+    //       longitude: longitude,
+    //       latitudeDelta: 0.015,
+    //       longitudeDelta: 0.0121,
+    //     },
+    //     marker: {
+    //       latitude: latitude,
+    //       longitude: longitude,
+    //     }
+    //   })
+    // }
   }
 
   render() {
+    let active = null;
+    active = this.props.employees.find(x => x.key === this.props.selectedEmployee.key);
+    
     let maps = (<View style={styles.uiBlock}>
       <Text>This user offline right now!</Text>
     </View>);
-    if (this.props.selectedEmployee.status === 'active') {
+    if (active.status === 'active') {
       maps = (
         <MapView style={styles.mapView}
-                 region={this.state.region}
+                 region={active.coordinate}
         >
-          <MapView.Marker coordinate={this.state.marker}/>
+          <MapView.Marker coordinate={active.coordinate}/>
         </MapView>
       )
     }
     return (
       <View style={styles.container}>
         <View style={styles.uiBlock}>
-          <Text>{this.props.selectedEmployee.email}</Text>
+          <Text>{active.email}</Text>
           <TextInput placeholder='Name'
                      placeholderTextColor={'#d3d3d3'}
                      autoCorrect={false}
@@ -109,13 +119,19 @@ class EmployeeDetail extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    employees: state.employees.employees
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     employeeDelete: (key) => dispatch(employeeDelete(key))
   }
 };
 
-export default connect(null, mapDispatchToProps)(EmployeeDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeDetail);
 
 
 const styles = StyleSheet.create({

@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 import {getEmployees} from "../../action";
 import EmployeeList from './layout/EmployeeList';
 import Icon from "react-native-vector-icons/Ionicons";
+//import { Observable } from 'rxjs/Observable';
 
 class Summary extends Component{
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.props.onLoadEmployee();
+    this.state = {
+      //selEmployee: Observable.selectedEmployee
+    }
   };
   // side drawer
   onNavigatorEvent = event => {
@@ -24,9 +28,9 @@ class Summary extends Component{
 
   // item selected Handler
   itemSelectedHandler = key => {
-    const selEmployee = this.props.employees.find( x => {
+    let selEmployee = this.props.employees.find( x => {
       return x.key === key
-    });
+    })
     this.props.navigator.push({
       screen: "awesome-places.EmployeeDetail",
       title: selEmployee.name,
@@ -44,6 +48,12 @@ class Summary extends Component{
       passProps: {}
     })
   };
+
+  // Component Didmount
+  componentDidMount() {
+    
+  }
+
   // render
   render() {
     return (
