@@ -33,6 +33,7 @@ class AuthScreen extends Component {
               userName: value2.name,
               email: value2.phone,
               password: value2.shift,
+              status: value2.status,
               admin: value.key
             })
           }

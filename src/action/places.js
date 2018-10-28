@@ -75,3 +75,12 @@ export const changeStatus = (status, adminKey, userKey) => {
     .update({status: newStatus})
   }
 };
+
+// update status when connection to Firebase
+export const updateStatus = (adminKey, userKey) => {
+  return dispatch => {
+    let presenceRef = firebaseApp.database().ref("users").child(adminKey).child('employees').child(userKey);
+    // Write a string when this client loses connection
+    presenceRef.onDisconnect().update({status: 'offline'})
+  }
+}

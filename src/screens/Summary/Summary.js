@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
 import { connect } from 'react-redux';
-import {getPlaces, setCoordinate, changeStatus} from "../../action";
+import {getPlaces, setCoordinate, changeStatus, updateStatus} from "../../action";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 class Summary extends Component{
@@ -9,6 +9,7 @@ class Summary extends Component{
     super(props);
     
     this.props.onLoadPlaces();
+    this.props.updateStatus(this.props.user.admin, this.props.user.key);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     this.state = {
       isSwitchOn: false,
@@ -33,7 +34,7 @@ class Summary extends Component{
       }
     }
   };
-//0918680679a
+//0918680679
   componentWillMount() {
     navigator.geolocation.getCurrentPosition(r =>{
       this.setState({
@@ -60,6 +61,10 @@ class Summary extends Component{
   };
 
   componentDidMount() {
+    if ( this.props.user.status === 'active' ) {
+      this.setState({isSwitchOn: true})
+    }
+    //alert(JSON.stringify(this.props.user))
     const { coordinate } = this.state;
     this.watchID = navigator.geolocation.watchPosition(
       position => {
@@ -150,7 +155,8 @@ const mapDispatchToProps = dispatch => {
     onLoadPlaces: () => dispatch(getPlaces()),
     setCoordinate: (latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey) =>
      dispatch(setCoordinate(latitude, longitude, latitudeDelta, longitudeDelta, adminKey, userKey)),
-    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey))  
+    changeStatus: (status , adminKey, userKey) => dispatch(changeStatus(status , adminKey, userKey)),
+    updateStatus: (adminKey, userKey) => dispatch(updateStatus(adminKey, userKey))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);
